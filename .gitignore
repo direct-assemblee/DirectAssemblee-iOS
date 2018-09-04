@@ -1,0 +1,10 @@
+.DS_Store
+Pods/*
+*.generated.swift
+*.xcuserstate
+Podfile.lock
+config/fabric.apikey
+config/fabric.buildsecret
+config/api.url.dev
+Resources/Debug/GoogleService-Info.plist
+Resources/Release/GoogleService-Info.plist

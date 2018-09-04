@@ -1,0 +1,144 @@
+{
+  "type": "FeatureCollection",
+  "query": "15 Rue Foch",
+  "filters": {
+    "type": "housenumber"
+  },
+  "version": "draft",
+  "attribution": "BAN",
+  "limit": 5,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "score": 0.8537818181818181,
+        "postcode": "97490",
+        "citycode": "97411",
+        "name": "15 Rue Foch",
+        "id": "ADRNIVX_0000001402401184",
+        "label": "15 Rue Foch 97490 Saint-Denis",
+        "context": "974, La Réunion",
+        "housenumber": "15",
+        "type": "housenumber",
+        "street": "Rue Foch",
+        "importance": 0.3916,
+        "city": "Saint-Denis",
+        "y": 7687984.6,
+        "x": 343310.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.493449,
+          -20.901806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "score": 0.8488272727272727,
+        "postcode": "34000",
+        "citycode": "34172",
+        "name": "15 Rue Foch",
+        "id": "ADRNIVX_0000000284258631",
+        "label": "15 Rue Foch 34000 Montpellier",
+        "context": "34, Hérault, Occitanie (Languedoc-Roussillon)",
+        "housenumber": "15",
+        "type": "housenumber",
+        "street": "Rue Foch",
+        "importance": 0.3371,
+        "city": "Montpellier",
+        "y": 6279494.4,
+        "x": 770646.3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.874855,
+          43.610979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "score": 0.8383454545454545,
+        "postcode": "71200",
+        "citycode": "71153",
+        "name": "15 Rue Maréchal Foch",
+        "id": "ADRNIVX_0000000286108524",
+        "label": "15 Rue Maréchal Foch 71200 Le Creusot",
+        "context": "71, Saône-et-Loire, Bourgogne-Franche-Comté (Bourgogne)",
+        "housenumber": "15",
+        "type": "housenumber",
+        "street": "Rue Maréchal Foch",
+        "importance": 0.2218,
+        "city": "Le Creusot",
+        "y": 6634952.2,
+        "x": 809414.7,
+        "alias": "rue foch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.434843,
+          46.805766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "score": 0.8341090909090908,
+        "postcode": "94550",
+        "citycode": "94021",
+        "name": "15 Rue Foch",
+        "id": "ADRNIVX_0000000270999811",
+        "label": "15 Rue Foch 94550 Chevilly-Larue",
+        "context": "94, Val-de-Marne, Île-de-France",
+        "housenumber": "15",
+        "type": "housenumber",
+        "street": "Rue Foch",
+        "importance": 0.1752,
+        "city": "Chevilly-Larue",
+        "y": 6852595.2,
+        "x": 651556.3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.340835,
+          48.771635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "score": 0.8340454545454544,
+        "postcode": "31170",
+        "citycode": "31557",
+        "name": "15 Rue Foch",
+        "id": "ADRNIVX_0000000281158522",
+        "label": "15 Rue Foch 31170 Tournefeuille",
+        "context": "31, Haute-Garonne, Occitanie (Midi-Pyrénées)",
+        "housenumber": "15",
+        "type": "housenumber",
+        "street": "Rue Foch",
+        "importance": 0.1745,
+        "city": "Tournefeuille",
+        "y": 6277243,
+        "x": 566903.4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.35254,
+          43.58175
+        ]
+      }
+    }
+  ],
+  "licence": "ODbL 1.0"
+}

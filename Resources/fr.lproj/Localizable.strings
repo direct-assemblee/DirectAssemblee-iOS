@@ -1,0 +1,129 @@
+"onboarding_welcome" = "Comment souhaitez-vous découvrir votre député ?";
+"onboarding_use_geolocation" = "Par géolocalisation";
+"onboarding_enter_address" = "Par adresse postale";
+"onboarding_address_disclaimer" = "L'adresse saisie ne sera pas conservée.";
+"onboarding_search_deputy" = "Veuillez patienter, nous recherchons votre député...";
+"onboarding_multiple_deputies_found" = "Vous êtes à la frontière de plusieurs circonscriptions, il n'est pas possible de déterminer avec certitude votre député.";
+"onboarding_possible_deputies" = "Députés possibles";
+"onboarding_enable_notifications" = "Activer les notifications pour être informé de l\\'activité de votre député ?";
+"finish" = "Terminer";
+"home_whats_new" = "Quoi de neuf ?";
+"home_deputy_profile" = "Son profil";
+"home_loading_deputy_card" = "Veuillez patienter...\nNous récupérons votre député...";
+"deputy_details_no_declaration" = "Aucune déclaration disponible";
+"error_deputy_detail" = "Impossible de récupérer votre député";
+"error_deputies_list" = "Une erreur est survenue lors de la recherche de votre député.";
+"error_timeline_events" = "Impossible de récupérer les informations.";
+"error_no_timeline_events" = "Votre député n'a aucune activité.";
+"error_download" = "Une erreur est survenue lors du téléchargement.";
+"onboarding_disabled_geolocation" = "Vous avez désactivé la géolocalisation. Activez la dans les préférences de votre téléphone, ou bien saisissez une adresse.";
+"error_geolocation" = "Une erreur s'est produite durant la géolocalisation.";
+
+/*Fuzzy*/
+"error_address_search" = "Une erreur est survenue lors de la recherche.";
+"error_no_address_found" = "Aucune adresse n'a pu être trouvée.";
+"error_no_gps_coordinates_founds" = "Impossible d'utiliser cette adresse pour trouver votre député.";
+
+/*Fuzzy*/
+"vote_result_against" = "Contre";
+
+/*Fuzzy*/
+"vote_result_missing" = "Absent";
+
+/*Fuzzy*/
+"vote_result_for" = "Pour";
+"deputy_details_about" = "À propos de %@";
+"deputy_details_contact" = "Contacts";
+
+/*Fuzzy*/
+"declarations" = "Déclarations";
+"deputy_details_commission" = "Commission parlementaire";
+"deputy_details_parliament_age" = "Ancienneté parlementaire";
+"deputy_details_salary" = "Revenu mensuel de député (net)";
+"deputy_details_seat_number" = "Numéro de siège dans l'hémicyle";
+"deputy_details_current_mandate_start_date" = "Début du mandat actuel";
+"deputy_details_phone" = "Téléphone";
+
+/*Fuzzy*/
+"email_address" = "Courriel";
+"deputy_details_unspecified" = "Non renseigné";
+"error" = "Erreur";
+"ok" = "Ok";
+"home_unfollow_deputy_confirmation" = "Rechercher un nouveau député remplacera celui que vous suivez actuellement.";
+"cancel" = "Annuler";
+"confirm" = "Confirmer";
+"warning" = "Attention";
+"deputy_details_activityRate" = "Participation aux votes";
+"error_pull_to_refresh" = "Une erreur est survenue.";
+"timeline_event_motion_of_censure_signed" = "Signée";
+"timeline_event_motion_of_censure_not_signed" = "Non signée";
+"vote_result_non_voting" = "Non votant";
+
+/*Fuzzy*/
+"timeline_ballot_adopted" = "Adopté";
+
+/*Fuzzy*/
+"timeline_ballot_not_adopted" = "Rejeté";
+"timeline_motion_of_censure_adopted" = "Adoptée";
+"timeline_motion_of_censure_not_adopted" = "Rejetée";
+"timeline_event_vote_result_vote_missing" = "Absent";
+"timeline_event_vote_result_vote_missings" = "Absents";
+
+/*Fuzzy*/
+"vote_result_blank" = "Blanc";
+"your_deputy" = "Votre député";
+"error_subscribe" = "Une erreur est survenue lors de l'enregistrement de votre député.";
+"error_unsubscribe" = "Une erreur est survenue lors du changement de député. Le député actuel est conservé.";
+"deputy_details_job" = "Profession d'origine";
+
+/*Fuzzy*/
+"declaration" = "Déclaration";
+"vote_result_non_votings" = "Non votants";
+"loading" = "Chargement";
+"research" = "Recherche";
+"settings_notifications" = "Notifications";
+"deputy_details_age" = "Âge";
+"read_more" = "Voir sur le site officiel";
+"law_motives" = "Exposé des motifs";
+"error_no_mail_available" = "Aucun client mail n'est configuré sur votre téléphone.";
+"error_no_internet" = "Aucune connexion Internet";
+
+/*Fuzzy*/
+"the_assembly" = "L'assemblée";
+
+/*Fuzzy*/
+"declarations_of_interest_delivered_on" = "Déposée le";
+"change_deputy" = "Changer de député";
+"share_default_text" = "Mon député a actuellement une participation aux votes de %@. Découvrez et suivez l'activité de votre député grâce à l'application Direct Assemblée.";
+"reload" = "Recharger";
+"deputy_not_found" = "Nous n'avons pas pu trouver votre député.";
+"district_first" = "%dère";
+"district_others" = "%dème";
+"district" = "%@ circonscription";
+"app_slogan" = "Suivez votre député";
+"enter_address" = "Saisir une addresse postale";
+
+/*Fuzzy*/
+"error_all_deputies" = "Une erreur est survenue lors de la récupération des députés";
+"confirm_follow_deputy" = "Voulez-vous suivre %@ ?";
+"onboarding_use_all_deputies_list" = "Rechercher dans l'hémicyle";
+"search_all_deputies_placeholder" = "Rechercher...";
+"more" = "Plus";
+"faq" = "Foire aux questions";
+"my_deputy" = "Mon député";
+"share" = "Partager";
+"error_faq" = "Impossible de charger la FAQ";
+"error_ballot_votes_deputies" = "Une erreur est survenue lors de la récupération du détail des votes.";
+"ballot_detail_votes" = "Détail des votes";
+"no_result" = "Aucun résultat";
+"make_donation" = "Faire un don";
+"error_retry" = "Une erreur est survenue. Veuillez réessayer.";
+"powered_by" = "Alimenté par";
+
+/*Fuzzy*/
+"deputy_details_other_current_mandates" = "Mandats (autres)";
+
+/*Fuzzy*/
+"deputy_details_no_other_current_mandate" = "Aucun autre mandat en cours";
+"deputy_details_no_roles" = "Aucun rôle";
+"deputy_details_roles" = "Rôles";

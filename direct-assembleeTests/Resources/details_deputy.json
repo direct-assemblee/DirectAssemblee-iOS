@@ -1,0 +1,64 @@
+{
+  "id": 120,
+  "firstname": "Xavier",
+  "lastname": "Breton",
+  "parliamentGroup": "Les Républicains",
+  "department": {
+    "id": 20,
+    "code": "2a",
+    "name": "Corse-du-Sud"
+  },
+  "district": 1,
+  "commission": "Affaires culturelles et éducation",
+  "phone": "0909090909",
+  "email": "contact@xavierbreton.fr",
+  "job": "Cadre territorial",
+  "currentMandateStartDate": "19/06/2012",
+  "photoUrl": "http://www2.assemblee-nationale.fr/static/tribun/14/photos/330008.jpg",
+  "parliamentAgeInMonths": 10,
+  "declarations": [
+    {
+      "title": "Déclaration d’intérêts et d’activités",
+      "date": "23/07/2014",
+      "url": "http://www.hatvp.fr/livraison/dossiers/breton-xavier-dia-depute-01.pdf"
+    },
+    {
+      "title": "Déclaration d’intérêts et d’activités N°2",
+      "date": "24/07/2014",
+      "url": "http://www.hatvp.fr/livraison/dossiers/breton-xavier-dia-depute-02.pdf"
+    }
+  ],
+  "activityRate": 5,
+  "salary": 7209.99,
+  "seatNumber": 21,
+  "age": 45,
+  "otherCurrentMandates": [
+    "Membre du conseil départemental (Ain)",
+    "Activiste dans une ONG"
+  ],
+  "roles": [
+    {
+      "instanceType": "Commission permanente",
+      "positions": [
+        {
+          "name": "Vice-Président",
+          "instances": [
+            "Commission de la défense nationale et des forces armées"
+          ]
+        }
+      ]
+    },
+    {
+      "instanceType": "Groupe d'amitié",
+      "positions": [
+        {
+          "name": "Président",
+          "instances": [
+            "France-Kenya Ouganda Tanzanie",
+            "Hip-hop"
+          ]
+        }
+      ]
+    }
+  ]
+}

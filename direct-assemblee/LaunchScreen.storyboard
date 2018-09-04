@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-yy-qUW">
+                                <rect key="frame" x="68" y="272.5" width="239.5" height="122"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_launch" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-Lh-8J1">
+                                        <rect key="frame" x="87.5" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YEU-Lh-8J1" secondAttribute="height" multiplier="1:1" id="OcP-UA-YOX"/>
+                                            <constraint firstAttribute="width" constant="64" id="bpE-Nb-Tax"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direct Assemblée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BO-Yp-bAM">
+                                        <rect key="frame" x="0.0" y="64" width="239.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suivez votre député" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-U4-NUi">
+                                        <rect key="frame" x="51" y="104" width="136.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YEU-Lh-8J1" firstAttribute="top" secondItem="ijB-yy-qUW" secondAttribute="top" id="4Yz-bC-ltw"/>
+                                    <constraint firstItem="tkF-U4-NUi" firstAttribute="centerX" secondItem="ijB-yy-qUW" secondAttribute="centerX" id="57j-pn-n7x"/>
+                                    <constraint firstAttribute="bottom" secondItem="tkF-U4-NUi" secondAttribute="bottom" id="Wbf-yE-lgS"/>
+                                    <constraint firstAttribute="trailing" secondItem="1BO-Yp-bAM" secondAttribute="trailing" id="fEL-mg-nnI"/>
+                                    <constraint firstItem="1BO-Yp-bAM" firstAttribute="top" secondItem="YEU-Lh-8J1" secondAttribute="bottom" id="fT4-AS-RAz"/>
+                                    <constraint firstItem="1BO-Yp-bAM" firstAttribute="centerX" secondItem="ijB-yy-qUW" secondAttribute="centerX" id="j4m-h0-47N"/>
+                                    <constraint firstItem="YEU-Lh-8J1" firstAttribute="centerX" secondItem="ijB-yy-qUW" secondAttribute="centerX" id="t7M-pN-615"/>
+                                    <constraint firstItem="tkF-U4-NUi" firstAttribute="top" secondItem="1BO-Yp-bAM" secondAttribute="bottom" constant="4" id="zNR-Tk-b1w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.47843137254901957" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ijB-yy-qUW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Com-QY-4c8"/>
+                            <constraint firstItem="ijB-yy-qUW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jci-nB-MWb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_launch" width="256" height="256"/>
+    </resources>
+</document>

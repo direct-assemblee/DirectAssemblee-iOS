@@ -1,0 +1,15 @@
+[
+  {
+    "id": 120,
+    "firstname": "Xavier",
+    "lastname": "Breton",
+    "parliamentGroup": "Les Républicains",
+    "department": {
+      "id": 20,
+      "code": "2a",
+      "name": "Corse-du-Sud"
+    },
+    "district": 1,
+    "photoUrl": "http://www2.assemblee-nationale.fr/static/tribun/14/photos/330008.jpg"
+  }
+]
