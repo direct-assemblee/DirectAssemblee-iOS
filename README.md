@@ -76,7 +76,7 @@ Some icons are licensed under CC BY-ND 3.0 and provided by  [icons8](http://icon
 
 Direct Assemblée for IOS is under the GPLv3 and the MPLv2 license.
 
-See  [LICENSE](https://github.com/direct-assemblee/DirectAssemblee-iOS/master/LICENSE)  for more license info.
+See  [LICENSE](https://github.com/direct-assemblee/DirectAssemblee-iOS/blob/master/LICENSE)  for more license info.
 
 ## Contact
 
