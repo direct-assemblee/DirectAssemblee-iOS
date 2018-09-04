@@ -53,7 +53,7 @@ The `direct-assemblee` scheme use the production API, available if you want to t
 
 ### Development
 
-The `DADEV` scheme use the development API, which isn't available because the Direct Assemblée teams uses it as sandbox.  You can use mocks (see above), or you can setup our API on your computer (See README on API project : < URL PROJET API >).
+The `DADEV` scheme use the development API, which isn't available because the Direct Assemblée teams uses it as sandbox.  You can use mocks (see above), or you can setup our API on your computer from Github project (coming soon).
 
 If you run API on your computer, you have to specify its URL. Create a file named `api.url.dev` in `config` folder, add it to Xcode project and put the local API URL inside. Then, asddbuild and launch the `DADEV` scheme.
 
