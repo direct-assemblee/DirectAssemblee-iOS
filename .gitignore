@@ -1,10 +1,23 @@
+#Mac OS
 .DS_Store
-Pods/*
-*.generated.swift
+
+#Xcode
+*.mode*
+*.pbxuser
+xcuserdata
+*.xccheckout
 *.xcuserstate
+
+#Pods
+Pods/*
 Podfile.lock
+
+#Config
 config/fabric.apikey
 config/fabric.buildsecret
 config/api.url.dev
 Resources/Debug/GoogleService-Info.plist
 Resources/Release/GoogleService-Info.plist
+
+#Others
+*.generated.swift
