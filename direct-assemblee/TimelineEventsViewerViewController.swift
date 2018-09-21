@@ -64,9 +64,11 @@ class TimelineEventsViewerViewController: BaseViewController, BindableType, UIPa
     
     private func bindPageViewController() {
         
-        self.viewModel.eventsDetailsViewModelsList.asObservable().subscribe(onNext: { [weak self] viewModelsToDisplay in
-            self?.setupPageViewController(withViewModels: viewModelsToDisplay)
-        }).disposed(by: self.disposeBag)
+        self.viewModel.eventsDetailsViewModelsList
+            .asDriver()
+            .drive(onNext: { [weak self] viewModelsToDisplay in
+                self?.setupPageViewController(withViewModels: viewModelsToDisplay)
+            }).disposed(by: self.disposeBag)
         
     }
     
@@ -166,7 +168,7 @@ class TimelineEventsViewerViewController: BaseViewController, BindableType, UIPa
     private func blockPageViewGestureForPopGesture() {
         
         guard let interactivePopGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer else {
-                return
+            return
         }
         
         for view in self.pageViewController.view.subviews {
