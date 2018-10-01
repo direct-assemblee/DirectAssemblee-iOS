@@ -45,7 +45,5 @@ class TestsApi: MockableApi {
         return self.fakeJsonResponse(forFileName: self.testMode.fileName)
     }
     
-    
-    
 }
 

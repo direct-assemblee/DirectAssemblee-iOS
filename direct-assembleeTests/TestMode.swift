@@ -88,6 +88,19 @@ enum PlacesTestMode: TestMode {
     }
 }
 
+enum StatisticsTestMode: TestMode {
+    
+    case activityRatesByGroup
+    
+    var fileName:String {
+        
+        switch (self) {
+        case .activityRatesByGroup:
+            return "activity_rates_by_group"
+        }
+    }
+}
+
 enum CommonTestMode: TestMode {
     
     case error

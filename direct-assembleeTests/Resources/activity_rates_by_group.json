@@ -1,0 +1,60 @@
+{
+  "activityRatesByGroup": [
+    {
+      "group": {
+        "id": 6,
+        "name": "La France insoumise"
+      },
+      "activityRate": 19
+    },
+    {
+      "group": {
+        "id": 1,
+        "name": "La République en Marche"
+      },
+      "activityRate": 18
+    },
+    {
+      "group": {
+        "id": 2,
+        "name": "Les Républicains"
+      },
+      "activityRate": 18
+    },
+    {
+      "group": {
+        "id": 0,
+        "name": "Non-inscrits"
+      },
+      "activityRate": 17
+    },
+    {
+      "group": {
+        "id": 7,
+        "name": "Gauche démocrate et républicaine"
+      },
+      "activityRate": 16
+    },
+    {
+      "group": {
+        "id": 3,
+        "name": "Mouvement Démocrate et apparentés"
+      },
+      "activityRate": 15
+    },
+    {
+      "group": {
+        "id": 5,
+        "name": "Socialistes et apparentés"
+      },
+      "activityRate": 15
+    },
+    {
+      "group": {
+        "id": 4,
+        "name": "UDI, Agir et Indépendants"
+      },
+      "activityRate": 11
+    }
+  ]
+}

@@ -21,6 +21,7 @@ protocol Api {
     func unsubscribeToPushNotifications(withToken token:String, instanceId:String, forDeputyId deputyId:Int) -> Observable<Bool>
     func deputiesVotes(forBallotId ballotId:Int) -> Observable<BallotDeputiesVotes>
     func places(forText text: String) -> Observable<[Place]>
+    func activityRatesByGroup() -> Observable<[Activity]>
     
     func get(url: String, queryParameters:[String:Any]) -> Observable<Any>
     func post(url: String, bodyParameters:[String: Any]) -> Observable<Any>
@@ -30,10 +31,8 @@ protocol Api {
 }
 
 protocol MockableApi: Api {
-    
     func fakeJsonResponse(forUrl url:String) -> Any?
     func fakeJsonResponse(forFileName fileName: String) -> Any?
-    
 }
 
 extension Api {
@@ -43,7 +42,7 @@ extension Api {
         return Observable<[DeputySummary]>.create({ observer in
             
             let url = UrlBuilder.api().buildUrl(path: Constants.Api.allDeputiesPath)
-
+            
             let disposable = self.get(url: url, queryParameters: [:])
                 .subscribe(onNext: { deputiesJson in
                     
@@ -206,7 +205,7 @@ extension Api {
             
         })
     }
-
+    
     
     func places(forText text: String) -> Observable<[Place]> {
         
@@ -224,7 +223,32 @@ extension Api {
             
             return Disposables.create([disposable])
         })
+    }
+    
+    func activityRatesByGroup() -> Observable<[Activity]> {
         
+        return Observable<[Activity]>.create({  observer in
+            
+            let url = Constants.Api.activityRatesByGroupPath
+            
+            let disposable = self.get(url: url, queryParameters: [:]).subscribe(onNext: { json in
+                
+                //TEMP : TODO migrate all with Codable
+                guard let data = try? JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted),
+                    let activityRates = try? JSONDecoder().decode(Ranking.self, from: data) else {
+                        observer.onNext([])
+                        observer.onCompleted()
+                        return
+                }
+                
+                observer.onNext(activityRates.activityRatesByGroup)
+                observer.onCompleted()
+            }, onError: { error in
+                observer.onError(DAError(error: error, message: R.string.localizable.error_retry()))
+            })
+            
+            return Disposables.create([disposable])
+        })
     }
     
     func downloadFile(url: String) -> Observable<URL> {
@@ -276,15 +300,12 @@ extension MockableApi {
     func fakeJsonResponse(forFileName fileName: String) -> Any? {
         
         guard let filePath = Bundle(for: type(of: self) as! AnyClass).url(forResource: fileName, withExtension: ".json"),
-            let contentAsString = try? String(contentsOf: filePath, encoding: .utf8),
-            let contentAsData = contentAsString.data(using: .utf8),
+            let contentAsData = try? Data(contentsOf: filePath),
             let contentAsJson = try? JSONSerialization.jsonObject(with: contentAsData) else {
                 return nil
-                
         }
         
         return contentAsJson
-        
     }
     
     func get(url: String, queryParameters:[String:Any] = [:]) -> Observable<Any> {
@@ -309,5 +330,4 @@ extension MockableApi {
             return Disposables.create()
         }).delay(2, scheduler: MainScheduler.instance)
     }
-    
 }
