@@ -66,6 +66,22 @@
 		6658CBB31F140C110007E47B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6658CBB51F140C110007E47B /* Localizable.strings */; };
 		665C7B051EF16DBD009B7563 /* DeputyTimelineViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665C7B041EF16DBD009B7563 /* DeputyTimelineViewModelTests.swift */; };
 		665FB1A11F71B44E007EABC2 /* Themes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665FB1A01F71B44E007EABC2 /* Themes.xcassets */; };
+		665FC99F216383CB00A19420 /* StatisticsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC99E216383CB00A19420 /* StatisticsMainViewController.swift */; };
+		665FC9A22163841B00A19420 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665FC9A12163841B00A19420 /* Statistics.storyboard */; };
+		665FC9A42163849100A19420 /* ActivityRatesByGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9A32163849100A19420 /* ActivityRatesByGroupViewController.swift */; };
+		665FC9A52163866900A19420 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665FC9A12163841B00A19420 /* Statistics.storyboard */; };
+		665FC9A6216386F700A19420 /* ActivityRatesByGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9A32163849100A19420 /* ActivityRatesByGroupViewController.swift */; };
+		665FC9A7216386FA00A19420 /* StatisticsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC99E216383CB00A19420 /* StatisticsMainViewController.swift */; };
+		665FC9AA2163895A00A19420 /* StatisticsMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9A92163895A00A19420 /* StatisticsMainViewModel.swift */; };
+		665FC9AB2163898C00A19420 /* StatisticsMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9A92163895A00A19420 /* StatisticsMainViewModel.swift */; };
+		665FC9AD21638AE600A19420 /* ActivityRatesByGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9AC21638AE600A19420 /* ActivityRatesByGroupViewModel.swift */; };
+		665FC9AF21638BCE00A19420 /* ActivityRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9AE21638BCE00A19420 /* ActivityRateViewModel.swift */; };
+		665FC9B321638E7000A19420 /* ActivityRateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9B221638E7000A19420 /* ActivityRateViewModelTests.swift */; };
+		665FC9B42163900A00A19420 /* ActivityRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9AE21638BCE00A19420 /* ActivityRateViewModel.swift */; };
+		665FC9B52163900E00A19420 /* ActivityRatesByGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9AC21638AE600A19420 /* ActivityRatesByGroupViewModel.swift */; };
+		665FC9B72163930900A19420 /* ActivityRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9B62163930900A19420 /* ActivityRateTableViewCell.swift */; };
+		665FC9B82163942000A19420 /* ActivityRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9B62163930900A19420 /* ActivityRateTableViewCell.swift */; };
+		665FC9BA2163943700A19420 /* ActivityRatesByGroupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FC9B92163943700A19420 /* ActivityRatesByGroupViewModelTests.swift */; };
 		6662358920BC1B4800D24A2A /* BallotDeputiesVotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662358820BC1B4800D24A2A /* BallotDeputiesVotesViewController.swift */; };
 		666315CD1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666315CC1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift */; };
 		666315CF1EF7CF4300BDC108 /* DeputyDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666315CE1EF7CF4300BDC108 /* DeputyDetailSectionView.xib */; };
@@ -384,6 +400,15 @@
 		6658CBB41F140C110007E47B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		665C7B041EF16DBD009B7563 /* DeputyTimelineViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeputyTimelineViewModelTests.swift; sourceTree = "<group>"; };
 		665FB1A01F71B44E007EABC2 /* Themes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Themes.xcassets; sourceTree = "<group>"; };
+		665FC99E216383CB00A19420 /* StatisticsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMainViewController.swift; sourceTree = "<group>"; };
+		665FC9A12163841B00A19420 /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		665FC9A32163849100A19420 /* ActivityRatesByGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatesByGroupViewController.swift; sourceTree = "<group>"; };
+		665FC9A92163895A00A19420 /* StatisticsMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsMainViewModel.swift; sourceTree = "<group>"; };
+		665FC9AC21638AE600A19420 /* ActivityRatesByGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatesByGroupViewModel.swift; sourceTree = "<group>"; };
+		665FC9AE21638BCE00A19420 /* ActivityRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRateViewModel.swift; sourceTree = "<group>"; };
+		665FC9B221638E7000A19420 /* ActivityRateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRateViewModelTests.swift; sourceTree = "<group>"; };
+		665FC9B62163930900A19420 /* ActivityRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRateTableViewCell.swift; sourceTree = "<group>"; };
+		665FC9B92163943700A19420 /* ActivityRatesByGroupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatesByGroupViewModelTests.swift; sourceTree = "<group>"; };
 		6662358820BC1B4800D24A2A /* BallotDeputiesVotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallotDeputiesVotesViewController.swift; sourceTree = "<group>"; };
 		666315CC1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeputyDeclarationViewModelTests.swift; sourceTree = "<group>"; };
 		666315CE1EF7CF4300BDC108 /* DeputyDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeputyDetailSectionView.xib; sourceTree = "<group>"; };
@@ -567,6 +592,8 @@
 		661E5B141F03F4C100526CB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6DD39DD9208537480033310D /* MoreMenuViewModel.swift */,
+				6DD39DDB20853F040033310D /* MoreMenuItemViewModel.swift */,
 				663F557E1EF0952700254778 /* BaseViewModel.swift */,
 			);
 			name = Common;
@@ -655,6 +682,58 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		665FC99C2163827C00A19420 /* TimelineEvents */ = {
+			isa = PBXGroup;
+			children = (
+				66E977721F2B5FCB00D2A199 /* TimelineEventsViewerViewController.swift */,
+				668E23C01F3094A500B32D7B /* BallotViewController.swift */,
+				66ADC2541F3CB52600578507 /* NonBallotViewController.swift */,
+				6662358820BC1B4800D24A2A /* BallotDeputiesVotesViewController.swift */,
+			);
+			name = TimelineEvents;
+			sourceTree = "<group>";
+		};
+		665FC99D2163829400A19420 /* TimelineEvents */ = {
+			isa = PBXGroup;
+			children = (
+				66E9776E1F2B5E8500D2A199 /* TimelineEventsViewerViewModel.swift */,
+				66E977781F2B66CC00D2A199 /* BallotViewModel.swift */,
+				66ADC2561F3CB56000578507 /* NonBallotViewModel.swift */,
+				6629E2021F893413003723D5 /* NonBallotInfoViewModel.swift */,
+				66D0BB621EE86D730089A303 /* TimelineEventViewModel.swift */,
+				660771D720BD62E3002F6273 /* BallotDeputiesVotesViewModel.swift */,
+			);
+			name = TimelineEvents;
+			sourceTree = "<group>";
+		};
+		665FC9A02163840400A19420 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				665FC99E216383CB00A19420 /* StatisticsMainViewController.swift */,
+				665FC9A32163849100A19420 /* ActivityRatesByGroupViewController.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		665FC9A82163894A00A19420 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				665FC9A92163895A00A19420 /* StatisticsMainViewModel.swift */,
+				665FC9AC21638AE600A19420 /* ActivityRatesByGroupViewModel.swift */,
+				665FC9AE21638BCE00A19420 /* ActivityRateViewModel.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		665FC9B121638E5F00A19420 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				665FC9B221638E7000A19420 /* ActivityRateViewModelTests.swift */,
+				665FC9B92163943700A19420 /* ActivityRatesByGroupViewModelTests.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
 		666315D01EF7CFF600BDC108 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,20 +764,12 @@
 				6D442EFD1F9FBA7F009CF247 /* DeputyMainViewModel.swift */,
 				6D442F011F9FC828009CF247 /* DeputyFloatingHeaderViewModel.swift */,
 				6624EAA11F0D768400BFEB5F /* DeputyHeaderCardViewModel.swift */,
-				66D0BB621EE86D730089A303 /* TimelineEventViewModel.swift */,
 				6612A1281EF15D3D00A61DB4 /* DeputyTimelineViewModel.swift */,
 				6602124B1EF2A97F00D74960 /* DeputyDetailsViewModel.swift */,
 				660212471EF2A80500D74960 /* DeputyDetailTitleAndValueViewModel.swift */,
 				664B9A711EF40D6000C901E1 /* DeputyDeclarationViewModel.swift */,
 				662BAC721F0BB31C0026FD66 /* DeputyDetailSingleValueViewModel.swift */,
 				662131C11F0E4A2A0090A7F6 /* DeputyDeclarationViewerViewModel.swift */,
-				66E9776E1F2B5E8500D2A199 /* TimelineEventsViewerViewModel.swift */,
-				66E977781F2B66CC00D2A199 /* BallotViewModel.swift */,
-				66ADC2561F3CB56000578507 /* NonBallotViewModel.swift */,
-				6629E2021F893413003723D5 /* NonBallotInfoViewModel.swift */,
-				6DD39DD9208537480033310D /* MoreMenuViewModel.swift */,
-				6DD39DDB20853F040033310D /* MoreMenuItemViewModel.swift */,
-				660771D720BD62E3002F6273 /* BallotDeputiesVotesViewModel.swift */,
 				660771EF20BDF1E7002F6273 /* DeputyVoteTypeViewModel.swift */,
 			);
 			name = Deputy;
@@ -729,8 +800,10 @@
 		66A725A21FE081B800C466AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				665FC99C2163827C00A19420 /* TimelineEvents */,
 				66A725A41FE081DD00C466AC /* Onboarding */,
 				66A725A31FE081D900C466AC /* Deputy */,
+				665FC9A02163840400A19420 /* Statistics */,
 				66FBE73F20934AAA0014D2CC /* Common */,
 			);
 			name = ViewControllers;
@@ -745,10 +818,6 @@
 				6612A1261EF15C4500A61DB4 /* DeputyTimelineViewController.swift */,
 				6677571B1EF17BFE00B427A8 /* DeputyDetailsViewController.swift */,
 				66C57F211EF919EB0053D78C /* DeputyDeclarationViewerViewController.swift */,
-				66E977721F2B5FCB00D2A199 /* TimelineEventsViewerViewController.swift */,
-				668E23C01F3094A500B32D7B /* BallotViewController.swift */,
-				66ADC2541F3CB52600578507 /* NonBallotViewController.swift */,
-				6662358820BC1B4800D24A2A /* BallotDeputiesVotesViewController.swift */,
 			);
 			name = Deputy;
 			sourceTree = "<group>";
@@ -772,6 +841,7 @@
 				6D21F3E61EB2981D0030216C /* Onboarding.storyboard */,
 				6658CBAF1F140B9F0007E47B /* Deputy.storyboard */,
 				66FBE73C209346270014D2CC /* Common.storyboard */,
+				665FC9A12163841B00A19420 /* Statistics.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -851,6 +921,8 @@
 		6D21F3EB1EB934BB0030216C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				665FC9A82163894A00A19420 /* Statistics */,
+				665FC99D2163829400A19420 /* TimelineEvents */,
 				6624EAA71F0D921D00BFEB5F /* Protocols */,
 				661E5B141F03F4C100526CB6 /* Common */,
 				66836FCE1EE75CDA00DFB994 /* Onboarding */,
@@ -876,6 +948,7 @@
 		6D21F3ED1EB934EC0030216C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				665FC9B121638E5F00A19420 /* Statistics */,
 				6D9ED03A208E77B90048E06C /* Other */,
 				664C853C1FA9CA7D002F00B3 /* Deputy */,
 				664C853D1FA9CA83002F00B3 /* Events */,
@@ -1001,6 +1074,7 @@
 				6629E2061F893A9D003723D5 /* NonBallotInfoTableViewCell.swift */,
 				6DD39DD52085357C0033310D /* MoreMenuItemTableViewCell.swift */,
 				660771E020BD7E0D002F6273 /* DeputyVoteTypeCollectionViewCell.swift */,
+				665FC9B62163930900A19420 /* ActivityRateTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -1260,6 +1334,7 @@
 				668869EB2091D06A00025C42 /* timeline_deputy.json in Resources */,
 				668869EC2091D06A00025C42 /* SelectAddressErrorFooterView.xib in Resources */,
 				668869ED2091D06A00025C42 /* DeputyDetailSectionView.xib in Resources */,
+				665FC9A52163866900A19420 /* Statistics.storyboard in Resources */,
 				66FBE73E209349A00014D2CC /* Common.storyboard in Resources */,
 				668869EE2091D06A00025C42 /* Onboarding.storyboard in Resources */,
 				6D3364E420E282D000798259 /* places.json in Resources */,
@@ -1288,6 +1363,7 @@
 				6D45A7561F29516E00C55878 /* DeputyTimelineFooterView.xib in Resources */,
 				6D68A2171FB24F8800BBEE04 /* SelectAddressErrorFooterView.xib in Resources */,
 				666315CF1EF7CF4300BDC108 /* DeputyDetailSectionView.xib in Resources */,
+				665FC9A22163841B00A19420 /* Statistics.storyboard in Resources */,
 				669CADAC212AD779005EF3B9 /* api.url.dev in Resources */,
 				66886A042091D6A300025C42 /* Settings.plist in Resources */,
 				6D21F3E71EB2981D0030216C /* Onboarding.storyboard in Resources */,
@@ -1626,6 +1702,7 @@
 				668869872091D06A00025C42 /* MultipleDeputiesFoundViewController.swift in Sources */,
 				668869882091D06A00025C42 /* R.generated.swift in Sources */,
 				668869892091D06A00025C42 /* AppDelegate.swift in Sources */,
+				665FC9A6216386F700A19420 /* ActivityRatesByGroupViewController.swift in Sources */,
 				6688698A2091D06A00025C42 /* MultipleDeputiesFoundViewModel.swift in Sources */,
 				6688698B2091D06A00025C42 /* LoadingView.swift in Sources */,
 				6688698C2091D06A00025C42 /* Department.swift in Sources */,
@@ -1649,6 +1726,7 @@
 				6688699A2091D06A00025C42 /* SearchDeputyViewController.swift in Sources */,
 				6688699B2091D06A00025C42 /* TimelineEventTableViewCell.swift in Sources */,
 				6688699C2091D06A00025C42 /* FAQViewController.swift in Sources */,
+				665FC9B52163900E00A19420 /* ActivityRatesByGroupViewModel.swift in Sources */,
 				660771F120BDF2A0002F6273 /* DeputyVoteTypeViewModel.swift in Sources */,
 				6688699D2091D06A00025C42 /* NotificationsManager.swift in Sources */,
 				6688699E2091D06A00025C42 /* NonBallotViewController.swift in Sources */,
@@ -1685,6 +1763,8 @@
 				668869BB2091D06A00025C42 /* VoteResult.swift in Sources */,
 				668869BC2091D06A00025C42 /* NonBallotViewModel.swift in Sources */,
 				668869BD2091D06A00025C42 /* DeputyDetailTitleAndValueTableViewCell.swift in Sources */,
+				665FC9B82163942000A19420 /* ActivityRateTableViewCell.swift in Sources */,
+				665FC9AB2163898C00A19420 /* StatisticsMainViewModel.swift in Sources */,
 				6D38A13420BCA45C005D9DB5 /* BallotDeputiesVotes.swift in Sources */,
 				668869BE2091D06A00025C42 /* PlaceViewModel.swift in Sources */,
 				668869BF2091D06A00025C42 /* Constants.swift in Sources */,
@@ -1692,6 +1772,7 @@
 				668869C22091D06A00025C42 /* UIView+Utils.swift in Sources */,
 				6D38A13220BCA192005D9DB5 /* BallotDeputiesVotesResponseHandler.swift in Sources */,
 				668869C32091D06A00025C42 /* BaseTableViewCell.swift in Sources */,
+				665FC9A7216386FA00A19420 /* StatisticsMainViewController.swift in Sources */,
 				668869C42091D06A00025C42 /* Errors.swift in Sources */,
 				6D38A13320BCA1A9005D9DB5 /* BallotDeputiesVotesViewController.swift in Sources */,
 				668869C52091D06A00025C42 /* RealApi.swift in Sources */,
@@ -1703,6 +1784,7 @@
 				668869CA2091D06A00025C42 /* DeputyMainViewModel.swift in Sources */,
 				668869CB2091D06A00025C42 /* MoreMenuItem.swift in Sources */,
 				668869CC2091D06A00025C42 /* DeputyDetailTitleAndValueViewModel.swift in Sources */,
+				665FC9B42163900A00A19420 /* ActivityRateViewModel.swift in Sources */,
 				660771E220BD7F60002F6273 /* DeputyVoteTypeCollectionViewCell.swift in Sources */,
 				668869CD2091D06A00025C42 /* DeputyHeaderCardViewModel.swift in Sources */,
 				668869CE2091D06A00025C42 /* DeputyDetailsViewModel.swift in Sources */,
@@ -1749,6 +1831,7 @@
 				667757181EF1759000B427A8 /* UIViewController+Utils.swift in Sources */,
 				66886A0C2092141B00025C42 /* UrlBuilder.swift in Sources */,
 				66E977731F2B5FCB00D2A199 /* TimelineEventsViewerViewController.swift in Sources */,
+				665FC99F216383CB00A19420 /* StatisticsMainViewController.swift in Sources */,
 				660771E120BD7E0D002F6273 /* DeputyVoteTypeCollectionViewCell.swift in Sources */,
 				66B1A0ED1EC391D400825064 /* Place.swift in Sources */,
 				66836FC91EE7503900DFB994 /* TimelineEvent.swift in Sources */,
@@ -1757,6 +1840,7 @@
 				6D21F3FE1EB93B4F0030216C /* MockApi.swift in Sources */,
 				6D9ED039208E52180048E06C /* PlaceholderView.swift in Sources */,
 				662EDCCB21012C2B0092725B /* RolesResponseHandler.swift in Sources */,
+				665FC9A42163849100A19420 /* ActivityRatesByGroupViewController.swift in Sources */,
 				662EDCC521012B0F0092725B /* Role.swift in Sources */,
 				66774B1F1EC330A000FB76B7 /* SearchDeputyByAddressViewModel.swift in Sources */,
 				6629E2071F893A9D003723D5 /* NonBallotInfoTableViewCell.swift in Sources */,
@@ -1791,6 +1875,7 @@
 				6D442F001F9FC800009CF247 /* DeputyFloatingHeaderViewController.swift in Sources */,
 				66A725A11FE00AFF00C466AC /* RoundedButton.swift in Sources */,
 				667161651FD85E09008B4312 /* BarChartView.swift in Sources */,
+				665FC9AF21638BCE00A19420 /* ActivityRateViewModel.swift in Sources */,
 				66E977791F2B66CC00D2A199 /* BallotViewModel.swift in Sources */,
 				66F123311F141106006A60F7 /* WelcomeOnboardingViewModel.swift in Sources */,
 				6D37242E1EBBC79200FB5FC1 /* DeputyTableViewCell.swift in Sources */,
@@ -1798,6 +1883,8 @@
 				6DD39DD62085357C0033310D /* MoreMenuItemTableViewCell.swift in Sources */,
 				6D38A13120BC9FB8005D9DB5 /* BallotDeputiesVotes.swift in Sources */,
 				6D3724161EBA6D0300FB5FC1 /* Date+Utils.swift in Sources */,
+				665FC9B72163930900A19420 /* ActivityRateTableViewCell.swift in Sources */,
+				665FC9AA2163895A00A19420 /* StatisticsMainViewModel.swift in Sources */,
 				66D9ED531EE6C4E100E0A3EA /* Declaration.swift in Sources */,
 				6D21F3F91EB93AD60030216C /* Api.swift in Sources */,
 				66BA65411F3A3DFD009EBFC1 /* VoteResult.swift in Sources */,
@@ -1818,6 +1905,7 @@
 				6D442EFE1F9FBA80009CF247 /* DeputyMainViewModel.swift in Sources */,
 				66FCCF1F2086196200EC0B52 /* MoreMenuItem.swift in Sources */,
 				6602124A1EF2A89600D74960 /* DeputyDetailTitleAndValueViewModel.swift in Sources */,
+				665FC9AD21638AE600A19420 /* ActivityRatesByGroupViewModel.swift in Sources */,
 				6624EAA21F0D768400BFEB5F /* DeputyHeaderCardViewModel.swift in Sources */,
 				6602124C1EF2A97F00D74960 /* DeputyDetailsViewModel.swift in Sources */,
 				6629E2031F893413003723D5 /* NonBallotInfoViewModel.swift in Sources */,
@@ -1848,10 +1936,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				665FC9B321638E7000A19420 /* ActivityRateViewModelTests.swift in Sources */,
 				666315CD1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift in Sources */,
 				6631D53C1EF2C479000207C5 /* DeputyDetailsViewModelTests.swift in Sources */,
 				66DE64971EBE0B7600D8B656 /* SearchDeputyViewModelTests.swift in Sources */,
 				66B068062059D2EB00C94FDF /* DeputySummaryTest.swift in Sources */,
+				665FC9BA2163943700A19420 /* ActivityRatesByGroupViewModelTests.swift in Sources */,
 				662BAC771F0BB8E10026FD66 /* DeputyDetailSingleValueViewModelTests.swift in Sources */,
 				665C7B051EF16DBD009B7563 /* DeputyTimelineViewModelTests.swift in Sources */,
 				666E73931EC4F4C300D02DD2 /* PlaceViewModelTests.swift in Sources */,

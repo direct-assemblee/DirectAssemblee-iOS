@@ -9,7 +9,7 @@
 import Foundation
 
 struct Ranking: Codable {
-    let activityRatesByGroup: [Activity]
+    let activityRatesByGroup: [ActivityRate]
 }
 
 struct ParliamentGroup: Codable {
@@ -17,13 +17,18 @@ struct ParliamentGroup: Codable {
     let name: String
 }
 
-struct Activity: Codable {
+struct ActivityRate: Codable {
     let parliamentGroup: ParliamentGroup
     let activityRate: Int
     
     enum CodingKeys: String, CodingKey {
         case parliamentGroup = "group"
         case activityRate = "activityRate"
+    }
+    
+    public init(parliamentGroup: ParliamentGroup, activityRate: Int) {
+        self.parliamentGroup = parliamentGroup
+        self.activityRate = activityRate
     }
     
     public init(from decoder: Decoder) throws {

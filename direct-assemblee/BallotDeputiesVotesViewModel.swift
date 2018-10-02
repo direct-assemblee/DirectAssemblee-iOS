@@ -19,13 +19,13 @@ struct BallotVotesViewModels {
     var noVotingDeputiesViewModel: DeputiesListViewModel
 }
 
-enum State {
-    case loading
-    case loaded(data: BallotVotesViewModels)
-    case error(error: DAError)
-}
-
 class BallotDeputiesVotesViewModel: BaseViewModel, DeputySearchViewModel {
+    
+    enum State {
+        case loading
+        case loaded(data: BallotVotesViewModels)
+        case error(error: DAError)
+    }
     
     private var api: Api
     private var timelineEvent: TimelineEvent

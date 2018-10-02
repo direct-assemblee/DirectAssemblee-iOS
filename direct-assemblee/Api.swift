@@ -21,7 +21,7 @@ protocol Api {
     func unsubscribeToPushNotifications(withToken token:String, instanceId:String, forDeputyId deputyId:Int) -> Observable<Bool>
     func deputiesVotes(forBallotId ballotId:Int) -> Observable<BallotDeputiesVotes>
     func places(forText text: String) -> Observable<[Place]>
-    func activityRatesByGroup() -> Observable<[Activity]>
+    func activityRatesByGroup() -> Observable<[ActivityRate]>
     
     func get(url: String, queryParameters:[String:Any]) -> Observable<Any>
     func post(url: String, bodyParameters:[String: Any]) -> Observable<Any>
@@ -225,11 +225,11 @@ extension Api {
         })
     }
     
-    func activityRatesByGroup() -> Observable<[Activity]> {
+    func activityRatesByGroup() -> Observable<[ActivityRate]> {
         
-        return Observable<[Activity]>.create({  observer in
+        return Observable<[ActivityRate]>.create({  observer in
             
-            let url = Constants.Api.activityRatesByGroupPath
+            let url = UrlBuilder.api().buildUrl(path: Constants.Api.activityRatesByGroupPath)
             
             let disposable = self.get(url: url, queryParameters: [:]).subscribe(onNext: { json in
                 

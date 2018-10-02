@@ -15,18 +15,18 @@ class ActivityRatesByGroupTests: BaseTests {
     func testActivityRatesByGroupFromWebServiceShouldBeOk() {
         
         let asyncExpectation = expectation(description: "expectation")
-        var activities = [Activity]()
+        var activitiesRates = [ActivityRate]()
         
-        self.testsHelper.activityRatesByGroup.activityRatesByGroup().subscribe(onNext: { result in
+        self.testsHelper.activityRatesByGroupApi.activityRatesByGroup().subscribe(onNext: { result in
             asyncExpectation.fulfill()
-            activities = result
+            activitiesRates = result
         }).disposed(by: self.disposeBag)
         
         self.waitForExpectations(timeout: 4) { error in
-            XCTAssertEqual(activities.count, 8)
-            XCTAssertEqual(activities[0].activityRate, 19)
-            XCTAssertEqual(activities[0].parliamentGroup.id, 6)
-            XCTAssertEqual(activities[0].parliamentGroup.name, "La France insoumise")
+            XCTAssertEqual(activitiesRates.count, 8)
+            XCTAssertEqual(activitiesRates[0].activityRate, 19)
+            XCTAssertEqual(activitiesRates[0].parliamentGroup.id, 6)
+            XCTAssertEqual(activitiesRates[0].parliamentGroup.name, "La France insoumise")
         }
         
     }

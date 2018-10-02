@@ -21,7 +21,7 @@ class TestHelper {
     var deputyDetailsApi = TestsApi(testMode: DeputyDetailsTestMode.deputyOk)
     var ballotDeputiesVotes = TestsApi(testMode: BallotDetailsTestMode.deputiesVotes)
     var places = TestsApi(testMode: PlacesTestMode.places)
-    var activityRatesByGroup = TestsApi(testMode: StatisticsTestMode.activityRatesByGroup)
+    var activityRatesByGroupApi = TestsApi(testMode: StatisticsTestMode.activityRatesByGroup)
     var emptyApi = TestsApi(testMode: CommonTestMode.empty)
     var errorApi = TestsApi(testMode: CommonTestMode.error)
     
