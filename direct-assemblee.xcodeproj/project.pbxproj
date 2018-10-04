@@ -241,6 +241,8 @@
 		66B4468F1F31C1AA001805AD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4468E1F31C1AA001805AD /* PieChartView.swift */; };
 		66B60FEF1EE6C84C00ABEBEE /* DeclarationResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B60FEE1EE6C84C00ABEBEE /* DeclarationResponseHandler.swift */; };
 		66BA65411F3A3DFD009EBFC1 /* VoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA65401F3A3DFD009EBFC1 /* VoteResult.swift */; };
+		66C1C1BB21667E70006229F0 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1C1BA21667E70006229F0 /* ProgressBarView.swift */; };
+		66C1C1BC2166809B006229F0 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C1C1BA21667E70006229F0 /* ProgressBarView.swift */; };
 		66C3ED0D201F46FB00BF59A9 /* TaggageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3ED0C201F46FB00BF59A9 /* TaggageManager.swift */; };
 		66C57F221EF919EB0053D78C /* DeputyDeclarationViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C57F211EF919EB0053D78C /* DeputyDeclarationViewerViewController.swift */; };
 		66CD686A1FAA69450063E0B1 /* SelectAddressFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CD68691FAA69450063E0B1 /* SelectAddressFooterView.xib */; };
@@ -460,6 +462,7 @@
 		66B4468E1F31C1AA001805AD /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		66B60FEE1EE6C84C00ABEBEE /* DeclarationResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarationResponseHandler.swift; sourceTree = "<group>"; };
 		66BA65401F3A3DFD009EBFC1 /* VoteResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteResult.swift; sourceTree = "<group>"; };
+		66C1C1BA21667E70006229F0 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		66C3ED0C201F46FB00BF59A9 /* TaggageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggageManager.swift; sourceTree = "<group>"; };
 		66C57F211EF919EB0053D78C /* DeputyDeclarationViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeputyDeclarationViewerViewController.swift; sourceTree = "<group>"; };
 		66CD68691FAA69450063E0B1 /* SelectAddressFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectAddressFooterView.xib; sourceTree = "<group>"; };
@@ -859,6 +862,7 @@
 				66A725A01FE00AFF00C466AC /* RoundedButton.swift */,
 				66B4468E1F31C1AA001805AD /* PieChartView.swift */,
 				667161641FD85E09008B4312 /* BarChartView.swift */,
+				66C1C1BA21667E70006229F0 /* ProgressBarView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1721,6 +1725,7 @@
 				668869972091D06A00025C42 /* SearchDeputyByAddressViewModel.swift in Sources */,
 				668869982091D06A00025C42 /* NonBallotInfoTableViewCell.swift in Sources */,
 				662EDCC821012BBC0092725B /* Role.swift in Sources */,
+				66C1C1BC2166809B006229F0 /* ProgressBarView.swift in Sources */,
 				663D71C3209A51C7000BAB67 /* Enumerations.swift in Sources */,
 				668869992091D06A00025C42 /* PlaceTableViewCell.swift in Sources */,
 				6688699A2091D06A00025C42 /* SearchDeputyViewController.swift in Sources */,
@@ -1841,6 +1846,7 @@
 				6D9ED039208E52180048E06C /* PlaceholderView.swift in Sources */,
 				662EDCCB21012C2B0092725B /* RolesResponseHandler.swift in Sources */,
 				665FC9A42163849100A19420 /* ActivityRatesByGroupViewController.swift in Sources */,
+				66C1C1BB21667E70006229F0 /* ProgressBarView.swift in Sources */,
 				662EDCC521012B0F0092725B /* Role.swift in Sources */,
 				66774B1F1EC330A000FB76B7 /* SearchDeputyByAddressViewModel.swift in Sources */,
 				6629E2071F893A9D003723D5 /* NonBallotInfoTableViewCell.swift in Sources */,

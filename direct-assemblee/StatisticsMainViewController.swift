@@ -15,14 +15,16 @@ class StatisticsMainViewController: BaseViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewModel = StatisticsMainViewModel()
 
-        self.navigationController?.navigationBar.topItem?.title = "Statistiques"
+        self.bindViewModel()
     }
     
     // MARK: - Binding
 
     func bindViewModel() {
-        
+        self.navigationController?.navigationBar.topItem?.title = self.viewModel.title
     }
     
 

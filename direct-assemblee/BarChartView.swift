@@ -141,7 +141,6 @@ class BarChartView: UIView {
         let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = startPath
         animation.toValue = endPath
-        animation.fillMode = kCAFillModeBoth
         animation.duration = 0.4
         
         rectangleLayer.add(animation, forKey: "draw")

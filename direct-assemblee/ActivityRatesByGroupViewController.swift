@@ -13,6 +13,7 @@ import RxCocoa
 class ActivityRatesByGroupViewController: BaseViewController, BindableType {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewContainer: UIView!
     
     typealias ViewModelType = ActivityRatesByGroupViewModel
     var viewModel: ActivityRatesByGroupViewModel!
@@ -20,11 +21,14 @@ class ActivityRatesByGroupViewController: BaseViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewModel = ActivityRatesByGroupViewModel(api: SingletonManager.sharedApiInstance)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 85
+        self.tableView.separatorInset = .zero;
         
+        self.viewModel = ActivityRatesByGroupViewModel(api: SingletonManager.sharedApiInstance)
+
         self.bindViewModel()
     }
-    
     
     func bindViewModel() {
         self.bindState()
@@ -39,11 +43,12 @@ class ActivityRatesByGroupViewController: BaseViewController, BindableType {
                 
                 switch state {
                 case .loading:
-                    self?.view.addLoadingView(backgroundColor: UIColor(hex: Constants.Color.whiteColorCode))
+                    self?.tableViewContainer.addLoadingView(backgroundColor: UIColor(hex: Constants.Color.whiteColorCode))
                 case .loaded:
-                    self?.view.removeLoadingView()
+                    self?.tableViewContainer.removeLoadingView()
                 case .error(let error):
-                    self?.view.addPlaceholderView(error: error, onRefresh: { [weak self] in
+                    self?.tableViewContainer.addPlaceholderView(error: error, onRefresh: { [weak self] in
+                        self?.tableViewContainer.removePlaceholderView()
                         self?.viewModel.loadActivityRates()
                     })
                 }

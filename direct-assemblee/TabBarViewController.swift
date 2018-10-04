@@ -59,13 +59,12 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let mainStatisticsNavigationController = UINavigationController(rootViewController: mainStatisticsViewController)
         mainStatisticsNavigationController.navigationBar.isTranslucent = false
         
-        let mainStatisticsBarItem = UITabBarItem(title: "Statistiques", image: UIImage(named: "ic_politique_generale"), selectedImage: UIImage(named: "icon_faq"))
+        let mainStatisticsBarItem = UITabBarItem(title: R.string.localizable.synthesis(), image: UIImage(named: "ic_politique_generale"), selectedImage: UIImage(named: "ic_politique_generale"))
         mainStatisticsViewController.tabBarItem = mainStatisticsBarItem
         
         return mainStatisticsNavigationController
     }
 
-    
     private func getFaqItemViewController() -> UIViewController {
 
         let faqViewController = R.storyboard.common.faqViewController()!

@@ -130,3 +130,7 @@
 "search" = "Rechercher";
 "search_a_deputy" = "Rechercher un député";
 "faq_short" = "FAQ";
+"synthesis" = "Synthèse";
+
+/*Fuzzy*/
+"activity_rates_by_groups" = "Moyenne de participation aux votes \npar groupe parlementaire";

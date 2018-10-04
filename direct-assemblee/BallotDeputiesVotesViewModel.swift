@@ -63,6 +63,8 @@ class BallotDeputiesVotesViewModel: BaseViewModel, DeputySearchViewModel {
     
     func loadBallotDeputiesVotes() {
         
+        self.state.accept(.loading)
+        
         self.api.deputiesVotes(forBallotId: self.timelineEvent.id)
             .subscribe(onNext: { [weak self] ballotDeputiesVotes in
                 self?.ballotDeputiesVotes = ballotDeputiesVotes

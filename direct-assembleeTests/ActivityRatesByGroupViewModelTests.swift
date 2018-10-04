@@ -7,33 +7,45 @@
 //
 
 import XCTest
+import RxSwift
+import RxTest
+import RxBlocking
 
 @testable import direct_assemblee
 
 class ActivityRatesByGroupViewModelTests: BaseTests {
     
-    func testViewModelShouldBeInitializedCorrectly() {
+    func testViewModelShouldBeInitializedCorrectlyWithStateLoaded() {
+
+        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesByGroupApi)
+        let stateObservable = viewModel.state.subscribeOn(scheduler)
+
+        let result = try! stateObservable.skip(1).toBlocking(timeout: 4.0).first()
         
-        let testExpectation = expectation(description: "expectation")
+        XCTAssertEqual(result, ActivityRatesByGroupViewModel.State.loaded)
+    }
+    
+    func testViewModelShouldBeInitializedCorrectlyWithStateError() {
+        
+        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.errorApi)
+        let stateObservable = viewModel.state.subscribeOn(scheduler)
+        
+        let result = try! stateObservable.toBlocking(timeout: 4.0).first()
+        
+        let error = DAError(message: R.string.localizable.error_retry())
+        XCTAssertEqual(result, ActivityRatesByGroupViewModel.State.error(error: error))
+    }
+    
+    func testViewModelShouldBeInitializedCorrectlyWithActivityRatesWhenStateLoaded() {
         
         let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesByGroupApi)
-        var retrievedActivityRatesViewModels = [ActivityRateViewModel]()
+
+        let activitiesRatesObservable = viewModel.activitiesRatesViewModels.subscribeOn(scheduler)
         
-        viewModel.state.subscribe(onNext: { state in
-            
-            switch state {
-            case .loaded(let viewModels):
-                retrievedActivityRatesViewModels = viewModels
-                testExpectation.fulfill()
-            default:
-                break
-            }
-            
-        }).disposed(by: self.disposeBag)
+        let result = try! activitiesRatesObservable.toBlocking(timeout: 4.0).first()
         
-        self.waitForExpectations(timeout: 4) { error in
-            XCTAssertEqual(retrievedActivityRatesViewModels.count, 8)
-        }
+        XCTAssertEqual(result?.count, 8)
     }
+    
     
 }

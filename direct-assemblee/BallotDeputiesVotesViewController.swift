@@ -63,6 +63,7 @@ class BallotDeputiesVotesViewController: BaseViewController, BindableType, UIPag
                 self.buildPageViewDatasource(viewModels: viewModels)
             case .error(let error):
                 self.containerView.addPlaceholderView(error: error, onRefresh: { [unowned self] in
+                    self.containerView.removePlaceholderView()
                     self.viewModel.loadBallotDeputiesVotes()
                 })
             }

@@ -10,5 +10,6 @@ import Foundation
 
 class StatisticsMainViewModel: BaseViewModel {
     
+    var title = R.string.localizable.synthesis()
     
 }
