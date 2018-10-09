@@ -11,12 +11,11 @@ import UIKit
 
 class ProgressBarView: UIView {
 
-    var progress: Float = 0 {
-        didSet {
-           self.setupProgressLayer()
-        }
-    }
-
+    var progress: Float = 0
+    var progressTintColor = UIColor(hex: Constants.Color.blueColorCode)
+    var trackTintColor = UIColor(hex: Constants.Color.blueLightColorCode)
+    
+    
     private var trackLayer: CAShapeLayer {
         
         let trackLayer =  self.getBarLayer(width: self.bounds.width)
@@ -33,30 +32,22 @@ class ProgressBarView: UIView {
         
         return progressLayer
     }
-    
-    var progressTintColor = UIColor(hex: Constants.Color.blueColorCode)
-    var trackTintColor = UIColor(hex: Constants.Color.blueLightColorCode)
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         self.setupView()
     }
     
     private func setupView() {
         let trackLayer = self.trackLayer
         self.layer.addSublayer(trackLayer)
-    }
-    
-    private func setupProgressLayer() {
+        
         let progressLayer = self.progressLayer
         self.layer.addSublayer(progressLayer)
         self.animatesLayer(progressLayer)
     }
+    
 
     private func getBarLayer(width: CGFloat) -> CAShapeLayer {
         

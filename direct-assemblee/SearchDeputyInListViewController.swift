@@ -26,8 +26,6 @@ class SearchDeputyInListViewController: BaseViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = R.string.localizable.search_a_deputy()
-        
         self.bindViewModel()
     }
     
@@ -49,6 +47,8 @@ class SearchDeputyInListViewController: BaseViewController, BindableType {
     // MARK: - Binding
     
     func bindViewModel() {
+        
+        self.navigationItem.title = self.viewModel.title
         
         self.bindSearchBar()
         self.bindDeputiesList()

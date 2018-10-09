@@ -51,7 +51,7 @@
                                 <rect key="frame" x="10" y="30" width="355" height="36"/>
                                 <string key="text">Moyenne de participation aux votes 
 par groupe parlementaire</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,7 +76,7 @@ par groupe parlementaire</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cj-Up-Yzh" customClass="ProgressBarView" customModule="direct_assemblee" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="32" width="304.5" height="19"/>
+                                                            <rect key="frame" x="15" y="32" width="298.5" height="19"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19" id="GMb-Bn-l9F"/>
@@ -88,8 +88,8 @@ par groupe parlementaire</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq8-gP-WDZ">
-                                                            <rect key="frame" x="329.5" y="33" width="30.5" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                            <rect key="frame" x="323.5" y="31.5" width="36.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -97,7 +97,7 @@ par groupe parlementaire</string>
                                                     <constraints>
                                                         <constraint firstItem="8Cj-Up-Yzh" firstAttribute="leading" secondItem="NpT-F6-10B" secondAttribute="leading" id="7az-f1-8uf"/>
                                                         <constraint firstAttribute="trailing" secondItem="Uq8-gP-WDZ" secondAttribute="trailing" constant="15" id="JTy-1l-8Pi"/>
-                                                        <constraint firstItem="Uq8-gP-WDZ" firstAttribute="leading" secondItem="8Cj-Up-Yzh" secondAttribute="trailing" constant="10" id="NoW-ab-BYX"/>
+                                                        <constraint firstItem="Uq8-gP-WDZ" firstAttribute="leading" secondItem="8Cj-Up-Yzh" secondAttribute="trailing" constant="10" id="S1s-lP-MXv"/>
                                                         <constraint firstItem="Uq8-gP-WDZ" firstAttribute="centerY" secondItem="8Cj-Up-Yzh" secondAttribute="centerY" id="VQG-OS-Ci9"/>
                                                         <constraint firstItem="NpT-F6-10B" firstAttribute="top" secondItem="pY9-AK-oSw" secondAttribute="top" constant="10" id="X2z-Hs-sFY"/>
                                                         <constraint firstAttribute="bottom" secondItem="8Cj-Up-Yzh" secondAttribute="bottom" constant="7" id="Z48-R1-nMo"/>

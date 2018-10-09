@@ -18,6 +18,7 @@ class SearchDeputyInListViewModel: BaseViewModel, OnboardingFinalStepViewModel, 
     private var deputyMode: DeputyMode
     private var deputies = [DeputySummary]()
     
+    var title = R.string.localizable.search_a_deputy()
     var enterNamePlaceholderText = R.string.localizable.search_all_deputies_placeholder()
     var searchText = PublishSubject<String>()
     var reloadText = R.string.localizable.reload()
