@@ -11,21 +11,21 @@ import UIKit
 
 class ProgressBarView: UIView {
 
-    var progress: Float = 0
-    var progressTintColor = UIColor(hex: Constants.Color.blueColorCode)
-    var trackTintColor = UIColor(hex: Constants.Color.blueLightColorCode)
+    var progress: Float = 0 {
+        didSet {
+           self.setupProgressLayer()
+        }
+    }
 
-    override func draw(_ rect: CGRect) {
+    private var trackLayer: CAShapeLayer {
         
-        let trackLayer = self.getTrackLayer()
-        self.layer.addSublayer(trackLayer)
+        let trackLayer =  self.getBarLayer(width: self.bounds.width)
+        trackLayer.fillColor = self.trackTintColor.cgColor
         
-        let progressLayer = self.getProgressLayer()
-        self.layer.addSublayer(progressLayer)
-        self.animatesLayer(progressLayer)
+        return trackLayer
     }
     
-    private func getProgressLayer() -> CAShapeLayer {
+    private var progressLayer: CAShapeLayer {
         
         let width = CGFloat(self.progress) * self.bounds.width
         let progressLayer =  self.getBarLayer(width: width)
@@ -34,14 +34,30 @@ class ProgressBarView: UIView {
         return progressLayer
     }
     
-    private func getTrackLayer() -> CAShapeLayer {
-        
-        let trackLayer =  self.getBarLayer(width: self.bounds.width)
-        trackLayer.fillColor = self.trackTintColor.cgColor
-        
-        return trackLayer
+    var progressTintColor = UIColor(hex: Constants.Color.blueColorCode)
+    var trackTintColor = UIColor(hex: Constants.Color.blueLightColorCode)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupView()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.setupView()
+    }
+    
+    private func setupView() {
+        let trackLayer = self.trackLayer
+        self.layer.addSublayer(trackLayer)
+    }
+    
+    private func setupProgressLayer() {
+        let progressLayer = self.progressLayer
+        self.layer.addSublayer(progressLayer)
+        self.animatesLayer(progressLayer)
+    }
+
     private func getBarLayer(width: CGFloat) -> CAShapeLayer {
         
         let rect = CGRect(x: self.bounds.minX, y: self.bounds.minY, width: width, height: self.bounds.height)
@@ -58,14 +74,13 @@ class ProgressBarView: UIView {
     private func animatesLayer(_ layer: CAShapeLayer) {
     
         let fromRect = CGRect(x: self.bounds.minX, y: self.bounds.minY, width: 0, height: self.bounds.height)
-        let fromPath = UIBezierPath(rect: fromRect)
+        let fromPath = UIBezierPath(roundedRect: fromRect, cornerRadius: 5).cgPath
         let toPath = layer.path
         
         let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = fromPath
         animation.toValue = toPath
-        animation.duration = 2
-        animation.beginTime = 1
+        animation.duration = 0.4
         
         layer.add(animation, forKey: "draw")
         
