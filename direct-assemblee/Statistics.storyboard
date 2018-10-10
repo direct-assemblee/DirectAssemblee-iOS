@@ -83,7 +83,7 @@ par groupe parlementaire</string>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                                                    <real key="value" value="0.5"/>
+                                                                    <real key="value" value="0.20000000000000001"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
