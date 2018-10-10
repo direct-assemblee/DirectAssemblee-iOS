@@ -57,7 +57,7 @@ class DeputyFloatingHeaderViewController: BaseViewController, BindableType {
     
     private func bindDeputyHeaderHeight() {
         
-        self.viewModel.deputyHeaderCardHeight.asObservable().subscribe(onNext: { [weak self] height in
+        self.viewModel.deputyHeaderCardHeight.asDriver().drive(onNext: { [weak self] height in
             self?.deputyHeaderHeightConstraint.constant = height
         }).disposed(by: self.disposeBag)
     }

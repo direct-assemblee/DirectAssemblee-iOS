@@ -52,10 +52,10 @@ class DeputyTableViewCell: BaseTableViewCell, BindableType {
     
     func bindViewModel() {
         
-        self.viewModel.completeNameText.asObservable().asObservable().bind(to: self.nameLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.parliamentGroupText.asObservable().bind(to: self.parliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.districtText.asObservable().bind(to: self.districtLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.departmentText.asObservable().bind(to: self.departmentLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.completeNameText.asDriver().asDriver().drive(self.nameLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.parliamentGroupText.asDriver().drive(self.parliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.districtText.asDriver().drive(self.districtLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.departmentText.asDriver().drive(self.departmentLabel.rx.text).disposed(by: self.disposeBag)
         
         self.photo.sd_setImage(with: URL(string: self.viewModel.photoUrl.value), placeholderImage: R.image.no_photo_placeholder()) { [weak self] image, error, cacheType, url in
             

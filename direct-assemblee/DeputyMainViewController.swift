@@ -65,7 +65,7 @@ class DeputyMainViewController: BaseViewController, BindableType, UIGestureRecog
     
     private func bindErrorToast() {
         
-        self.viewModel.errorToastText.asObservable().bind(to: self.errorToastTextLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.errorToastText.asDriver().drive(self.errorToastTextLabel.rx.text).disposed(by: self.disposeBag)
         
         self.viewModel.isErrorToastHidden
             .asDriver()

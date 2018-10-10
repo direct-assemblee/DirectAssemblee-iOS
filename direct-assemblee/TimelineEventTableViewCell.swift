@@ -58,9 +58,9 @@ class TimelineEventTableViewCell: BaseTableViewCell, BindableType {
     
     func bindViewModel() {
 
-        self.viewModel.dateText.asObservable().bind(to: self.dateLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.descriptionText.asObservable().bind(to: self.descriptionLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.titleText.asObservable().bind(to: self.titleLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.dateText.asDriver().drive(self.dateLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.descriptionText.asDriver().drive(self.descriptionLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.titleText.asDriver().drive(self.titleLabel.rx.text).disposed(by: self.disposeBag)
 
         self.bindTheme()
         self.bindVoteInfos()
@@ -72,9 +72,9 @@ class TimelineEventTableViewCell: BaseTableViewCell, BindableType {
         self.isAdoptedImageView.image = self.isAdoptedImageView.image?.withRenderingMode(.alwaysTemplate)
         self.isAdoptedImageView.tintColor = UIColor.init(hex: self.viewModel.isAdoptedStatusColorCode)
         self.isAdoptedStatusLabel.textColor = UIColor(hex: self.viewModel.isAdoptedStatusColorCode)
-        self.viewModel.isAdoptedText.asObservable().bind(to: self.isAdoptedStatusLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.isAdoptedText.asDriver().drive(self.isAdoptedStatusLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.userDeputyVoteResultText.asDriver().drive(self.userDeputyAdoptedStatusLabel.rx.text).disposed(by: self.disposeBag)
         
-        self.viewModel.userDeputyVoteResultText.asObservable().bind(to: self.userDeputyAdoptedStatusLabel.rx.text).disposed(by: self.disposeBag)
         self.userDeputyAdoptedStatusLabel.textColor =  UIColor.init(hex: self.viewModel.userDeputyVoteColorCode)
         
         if let userDeputyVoteResultImageName = viewModel.userDeputyVoteResultImageName {
@@ -91,13 +91,14 @@ class TimelineEventTableViewCell: BaseTableViewCell, BindableType {
     
     private func bindTheme() {
         
-        self.viewModel.themeImageName.asObservable().subscribe(onNext: { [weak self] themeImageName in
-            self?.themeImageView.image = UIImage(named: themeImageName)
-            self?.themeImageView.image = self?.themeImageView.image?.withRenderingMode(.alwaysTemplate)
-            self?.themeImageView.tintColor = UIColor(hex: Constants.Color.whiteColorCode)
-        }).disposed(by: self.disposeBag)
+        self.viewModel.themeImageName.asDriver()
+            .drive(onNext: { [weak self] themeImageName in
+                self?.themeImageView.image = UIImage(named: themeImageName)
+                self?.themeImageView.image = self?.themeImageView.image?.withRenderingMode(.alwaysTemplate)
+                self?.themeImageView.tintColor = UIColor(hex: Constants.Color.whiteColorCode)
+            }).disposed(by: self.disposeBag)
         
-        self.viewModel.themeText.asObservable().bind(to: self.themeLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.themeText.asDriver().drive(self.themeLabel.rx.text).disposed(by: self.disposeBag)
         self.themeImageViewContainer.backgroundColor = UIColor(hex: Constants.Color.blueColorCode)
     }
 

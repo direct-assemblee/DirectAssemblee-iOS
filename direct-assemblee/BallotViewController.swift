@@ -54,12 +54,12 @@ class BallotViewController: BaseViewController, BindableType {
     
     func bindViewModel() {
         
-        self.viewModel.isAdoptedText.asObservable().bind(to: self.isAdoptedLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.userDeputyVoteResultText.asObservable().bind(to: self.userDeputyVoteLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.descriptionText.asObservable().bind(to: self.descriptionLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.dateText.asObservable().bind(to: self.dateLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.readMoreText.asObservable().bind(to: self.readMoreButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
-        self.viewModel.seeDetailsText.asObservable().bind(to: self.seeDetailsButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.isAdoptedText.asDriver().drive(self.isAdoptedLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.userDeputyVoteResultText.asDriver().drive(self.userDeputyVoteLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.descriptionText.asDriver().drive(self.descriptionLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.dateText.asDriver().drive(self.dateLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.readMoreText.asDriver().drive(self.readMoreButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.seeDetailsText.asDriver().drive(self.seeDetailsButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
         self.readMoreButtonHeightConstraint.constant = self.viewModel.readMoreUrl != nil ? 30 : 0
         
         self.bindVotesData()
@@ -72,7 +72,7 @@ class BallotViewController: BaseViewController, BindableType {
         self.isAdoptedImageView.image = self.isAdoptedImageView.image?.withRenderingMode(.alwaysTemplate)
         self.isAdoptedImageView.tintColor = UIColor.init(hex: self.viewModel.isAdoptedStatusColorCode.value)
         
-        self.viewModel.userDeputyVoteImageName.asObservable().subscribe(onNext: { [weak self] imageName in
+        self.viewModel.userDeputyVoteImageName.asDriver().drive(onNext: { [weak self] imageName in
             self?.userDeputyVoteImageView.image = UIImage(named: imageName)
             self?.userDeputyVoteImageView.image = self?.userDeputyVoteImageView.image?.withRenderingMode(.alwaysTemplate)
             self?.userDeputyVoteImageView.tintColor = UIColor.init(hex: self?.viewModel.userDeputyVoteColorCode.value ?? Constants.Color.greenColorCode)
@@ -81,7 +81,7 @@ class BallotViewController: BaseViewController, BindableType {
     
     private func bindVotesData() {
         
-        self.viewModel.votesData.asObservable().subscribe(onNext: { [weak self] tuples in
+        self.viewModel.votesData.asDriver().drive(onNext: { [weak self] tuples in
             
             for tuple in tuples {
                 let chartElement = ChartElement(value: tuple.value, color: UIColor(hex:tuple.colorCode), label: tuple.label)

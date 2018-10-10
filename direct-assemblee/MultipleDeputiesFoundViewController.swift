@@ -54,8 +54,9 @@ class MultipleDeputiesFoundViewController: BaseViewController, SearchDeputyResul
     //MARK: - Binding
     
     func bindViewModel() {
-        self.viewModel.multipleDeputiesFoundText.asObservable().bind(to: self.multipleDeputiesFoundLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.possibleDeputiesText.asObservable().bind(to: self.possibleDeputiesLabel.rx.text).disposed(by: self.disposeBag)
+        
+        self.viewModel.multipleDeputiesFoundText.asDriver().drive(self.multipleDeputiesFoundLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.possibleDeputiesText.asDriver().drive(self.possibleDeputiesLabel.rx.text).disposed(by: self.disposeBag)
         
         self.deputiesListViewController.didSelectViewModel.subscribe(onNext: { [weak self] viewModel in
             self?.viewModel.didSelectDeputy.onNext(.followConfirmed(viewModel))

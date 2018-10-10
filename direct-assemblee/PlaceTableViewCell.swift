@@ -33,7 +33,7 @@ class PlaceTableViewCell: BaseTableViewCell, BindableType {
     }
     
     func bindViewModel() {
-        self.viewModel.addressText.asObservable().bind(to: self.addressLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.addressText.asDriver().drive(self.addressLabel.rx.text).disposed(by: self.disposeBag)
     }
 
 }

@@ -22,7 +22,7 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loadingViewContainer: UIView!
-
+    
     @IBOutlet weak var toolbar: UIToolbar!
     
     private var downloadedFileUrl:URL?
@@ -48,7 +48,7 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
     //MARK: - Style
     
     func setupColors() {
-
+        
         self.view.backgroundColor = UIColor(hex: Constants.Color.blueColorCode)
         self.titleLabel.textColor = UIColor(hex: Constants.Color.whiteColorCode)
         self.dateLabel.textColor = UIColor(hex: Constants.Color.whiteColorCode)
@@ -62,12 +62,12 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
     
     func bindViewModel() {
         
-        self.viewModel.titleText.asObservable().bind(to: self.titleLabel.rx.text).disposed(by: self.disposeBag)
-       self.viewModel.dateText.asObservable().bind(to: self.dateLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.isShareButtonEnabled.asObservable().bind(to: self.shareBarButtonItem.rx.isEnabled).disposed(by: self.disposeBag)
-        self.viewModel.isWebviewHidden.asObservable().bind(to: self.webview.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isErrorViewHidden.asObservable().bind(to: self.errorView.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.errorText.asObservable().bind(to: self.errorLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.titleText.asDriver().drive(self.titleLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.dateText.asDriver().drive(self.dateLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.isShareButtonEnabled.asDriver().drive(self.shareBarButtonItem.rx.isEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isWebviewHidden.asDriver().drive(self.webview.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isErrorViewHidden.asDriver().drive(self.errorView.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.errorText.asDriver().drive(self.errorLabel.rx.text).disposed(by: self.disposeBag)
         
         self.bindDownloadedFileUrl()
         self.bindLoadingView()
@@ -86,24 +86,26 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
     
     private func bindLoadingView() {
         
-        self.viewModel.isLoadingViewHidden.asObservable().bind(to: self.loadingViewContainer.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isLoadingViewHidden.asDriver().drive(self.loadingViewContainer.rx.isHidden).disposed(by: self.disposeBag)
         
-        self.viewModel.isLoadingViewHidden.asObservable().subscribe(onNext: { [weak self] isHidden in
-            
-            if isHidden {
-                self?.loadingViewContainer.removeLoadingView()
-            } else {
-                self?.loadingViewContainer.addLoadingView()
-            }
-            
-        }).disposed(by: self.disposeBag)
+        self.viewModel.isLoadingViewHidden
+            .asDriver()
+            .drive(onNext: { [weak self] isHidden in
+                
+                if isHidden {
+                    self?.loadingViewContainer.removeLoadingView()
+                } else {
+                    self?.loadingViewContainer.addLoadingView()
+                }
+                
+            }).disposed(by: self.disposeBag)
     }
     
     
     // MARK: - Actions
     
     @IBAction func onActionTouch(_ sender: Any) {
-
+        
         guard let downloadedFileUrl = self.downloadedFileUrl else {
             return
         }

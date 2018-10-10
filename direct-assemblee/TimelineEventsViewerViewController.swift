@@ -74,9 +74,11 @@ class TimelineEventsViewerViewController: BaseViewController, BindableType, UIPa
     
     private func bindTitleAndTheme() {
         
-        Observable<String>.combineLatest([self.viewModel.titleText.asObservable(), self.viewModel.themeText.asObservable()]).subscribe(onNext: { [weak self] values in
-            self?.update(title: values[0], andTheme: values[1])
-        }).disposed(by: self.disposeBag)
+        Observable<String>.combineLatest([self.viewModel.titleText.asObservable(), self.viewModel.themeText.asObservable()])
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] values in
+                self?.update(title: values[0], andTheme: values[1])
+            }).disposed(by: self.disposeBag)
     }
     
     //MARK: - UIPageViewControllerDataSource

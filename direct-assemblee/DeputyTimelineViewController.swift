@@ -62,7 +62,7 @@ class DeputyTimelineViewController: BaseViewController, BindableType, UIViewCont
             self?.viewModel.isPullToRefreshControlDisplayed.value = true
         }).disposed(by: self.disposeBag)
         
-        self.viewModel.isPullToRefreshControlDisplayed.asObservable().bind(to: self.refreshControl.rx.isRefreshing).disposed(by: self.disposeBag)
+        self.viewModel.isPullToRefreshControlDisplayed.asDriver().drive(self.refreshControl.rx.isRefreshing).disposed(by: self.disposeBag)
         
     }
     
@@ -102,9 +102,8 @@ class DeputyTimelineViewController: BaseViewController, BindableType, UIViewCont
     private func bindLoadingView() {
         
         self.viewModel.isLoadingViewDisplayed
-            .asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] isDisplayed in
+            .asDriver()
+            .drive(onNext: { [weak self] isDisplayed in
                 
                 if isDisplayed {
                     self?.view.addLoadingView()
@@ -128,7 +127,7 @@ class DeputyTimelineViewController: BaseViewController, BindableType, UIViewCont
                 self?.timeLineTableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: self.disposeBag)
         
-        self.viewModel.timelineEventsViewerViewModelToDisplay.asObservable().subscribe(onNext: { [weak self] timelineEventsViewerViewModel in
+        self.viewModel.timelineEventsViewerViewModelToDisplay.asDriver().drive(onNext: { [weak self] timelineEventsViewerViewModel in
             
             guard let timelineEventsViewerViewModel = timelineEventsViewerViewModel else {
                 return
@@ -192,11 +191,10 @@ class DeputyTimelineViewController: BaseViewController, BindableType, UIViewCont
             }).disposed(by: self.disposeBag)
         
         self.viewModel.isLoadMoreEventsFinished
-            .asObservable()
-            .observeOn(MainScheduler.instance)
+            .asDriver()
             .filter { isLoadMoreEventsFinished in
                 return isLoadMoreEventsFinished == true
-            }.subscribe(onNext: { [weak self] _ in
+            }.drive(onNext: { [weak self] _ in
                 self?.timeLineTableView.tableFooterView = nil
             }).disposed(by: self.disposeBag)
         

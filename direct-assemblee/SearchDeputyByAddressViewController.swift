@@ -91,9 +91,9 @@ class SearchDeputyByAddressViewController: BaseViewController, BindableType {
         }).disposed(by: self.disposeBag)
         
         self.viewModel.isLoadingViewDisplayed
-            .asObservable()
+            .asDriver()
             .filter({$0 == true})
-            .subscribe(onNext: { [weak self] isDisplayed in
+            .drive(onNext: { [weak self] isDisplayed in
                 self?.searchResultsTableView.tableFooterView = self?.searchResultsLoadingFooterView
             }).disposed(by: self.disposeBag)
         
