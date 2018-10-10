@@ -22,7 +22,7 @@ class ActivityRatesByGroupViewModelTests: BaseTests {
 
         let result = try! stateObservable.skip(1).toBlocking(timeout: 4.0).first()
         
-        XCTAssertEqual(result, ActivityRatesByGroupViewModel.State.loaded)
+        XCTAssertEqual(result, State.loaded)
     }
     
     func testViewModelShouldBeInitializedCorrectlyWithStateError() {
@@ -33,7 +33,7 @@ class ActivityRatesByGroupViewModelTests: BaseTests {
         let result = try! stateObservable.toBlocking(timeout: 4.0).first()
         
         let error = DAError(message: R.string.localizable.error_retry())
-        XCTAssertEqual(result, ActivityRatesByGroupViewModel.State.error(error: error))
+        XCTAssertEqual(result, State.error(error: error))
     }
     
     func testViewModelShouldBeInitializedCorrectlyWithActivityRatesWhenStateLoaded() {

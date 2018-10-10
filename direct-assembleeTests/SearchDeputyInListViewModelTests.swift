@@ -25,6 +25,7 @@ class SearchDeputyInListViewModelTests: BaseTests {
         
         let viewModel = SearchDeputyInListViewModel(api: self.testsHelper.allDeputiesListApi, database:self.testsHelper.database, deputyMode: .follow)
         
+        XCTAssert(viewModel.title == R.string.localizable.search_a_deputy())
         XCTAssert(viewModel.enterNamePlaceholderText == R.string.localizable.search_all_deputies_placeholder())
         XCTAssert(viewModel.isSearchEnabled.value == false)
         XCTAssert(viewModel.isLoadingViewHidden.value == false)

@@ -18,7 +18,8 @@ class ActivityRateViewModelTests: BaseTests {
         let activityRate = ActivityRate(parliamentGroup: parliamentGroup, activityRate: 40)
         let viewModel = ActivityRateViewModel(activityRate: activityRate)
         
-        XCTAssertEqual(viewModel.activityRateValue.value, "40")
+        XCTAssertEqual(viewModel.activityRateValue.value, 0.4)
+        XCTAssertEqual(viewModel.activityRateValueText.value, "40 %")
         XCTAssertEqual(viewModel.parliamentGroupName.value, "Blop")
     }
 }
