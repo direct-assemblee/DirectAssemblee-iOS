@@ -17,7 +17,7 @@ class ActivityRatesByGroupViewModelTests: BaseTests {
     
     func testViewModelShouldBeInitializedCorrectlyWithStateLoaded() {
 
-        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesByGroupApi)
+        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesApi)
         let stateObservable = viewModel.state.subscribeOn(scheduler)
 
         let result = try! stateObservable.skip(1).toBlocking(timeout: 4.0).first()
@@ -38,7 +38,7 @@ class ActivityRatesByGroupViewModelTests: BaseTests {
     
     func testViewModelShouldBeInitializedCorrectlyWithActivityRatesWhenStateLoaded() {
         
-        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesByGroupApi)
+        let viewModel = ActivityRatesByGroupViewModel(api: self.testsHelper.activityRatesApi)
 
         let activitiesRatesObservable = viewModel.activitiesRatesViewModels.subscribeOn(scheduler)
         

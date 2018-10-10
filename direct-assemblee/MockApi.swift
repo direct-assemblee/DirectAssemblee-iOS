@@ -27,8 +27,8 @@ class MockApi: MockableApi {
             return self.fakeJsonResponse(forFileName: "all_deputies")
         } else if url.contains("/votes") {
             return self.fakeJsonResponse(forFileName: "ballot_deputies_votes")
-        } else if url.contains("/activityRatesByGroup") {
-            return self.fakeJsonResponse(forFileName: "activity_rates_by_group")
+        } else if url.contains("/activityRates") {
+            return self.fakeJsonResponse(forFileName: "activity_rates")
         } else if url.contains("subscribe") || url.contains("unsubscribe") {
             return ""
         } else if url.contains("https://api-adresse.data.gouv.fr/search/") {

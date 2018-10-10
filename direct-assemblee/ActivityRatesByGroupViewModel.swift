@@ -31,7 +31,7 @@ class ActivityRatesByGroupViewModel: BaseViewModel {
         
         self.state.accept(.loading)
         
-        self.api.activityRatesByGroup().subscribe(onNext: { [weak self] activitiesRates in
+        self.api.activityRates().subscribe(onNext: { [weak self] activitiesRates in
             let activitiesRatesViewModels = activitiesRates.map({  ActivityRateViewModel(activityRate: $0) })
             self?.state.accept(.loaded)
             self?.activitiesRatesViewModels.onNext(activitiesRatesViewModels)

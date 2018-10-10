@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct Ranking: Codable {
-    let activityRatesByGroup: [ActivityRate]
-}
-
 struct ParliamentGroup: Codable {
     let id: Int
     let name: String

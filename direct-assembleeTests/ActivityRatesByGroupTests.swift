@@ -17,14 +17,14 @@ class ActivityRatesByGroupTests: BaseTests {
         let asyncExpectation = expectation(description: "expectation")
         var activitiesRates = [ActivityRate]()
         
-        self.testsHelper.activityRatesByGroupApi.activityRatesByGroup().subscribe(onNext: { result in
+        self.testsHelper.activityRatesApi.activityRates().subscribe(onNext: { result in
             asyncExpectation.fulfill()
             activitiesRates = result
         }).disposed(by: self.disposeBag)
         
         self.waitForExpectations(timeout: 4) { error in
             XCTAssertEqual(activitiesRates.count, 8)
-            XCTAssertEqual(activitiesRates[0].activityRate, 19)
+            XCTAssertEqual(activitiesRates[0].activityRate, 27)
             XCTAssertEqual(activitiesRates[0].parliamentGroup.id, 6)
             XCTAssertEqual(activitiesRates[0].parliamentGroup.name, "La France insoumise")
         }

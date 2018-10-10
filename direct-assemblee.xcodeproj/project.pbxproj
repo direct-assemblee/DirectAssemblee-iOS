@@ -61,7 +61,7 @@
 		664C853F1FA9CAD2002F00B3 /* DeputyMainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664C853E1FA9CAD2002F00B3 /* DeputyMainViewModelTests.swift */; };
 		664DD7802084C2A400E33627 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DD77F2084C2A400E33627 /* FAQViewController.swift */; };
 		6652D5121EBDF5F5009EF645 /* SearchDeputyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652D5111EBDF5F5009EF645 /* SearchDeputyViewModel.swift */; };
-		6653DDB8216E118700C1859E /* activity_rates_by_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892892162B25600FC6B0E /* activity_rates_by_group.json */; };
+		6653DDB8216E118700C1859E /* activity_rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892892162B25600FC6B0E /* activity_rates.json */; };
 		6653DDBA216E122300C1859E /* StatisticsMainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653DDB9216E122300C1859E /* StatisticsMainViewModelTests.swift */; };
 		6658CB191F13F54A0007E47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658CB181F13F54A0007E47B /* LaunchScreen.storyboard */; };
 		6658CBB01F140B9F0007E47B /* Deputy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658CBAF1F140B9F0007E47B /* Deputy.storyboard */; };
@@ -88,10 +88,10 @@
 		666315CD1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666315CC1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift */; };
 		666315CF1EF7CF4300BDC108 /* DeputyDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666315CE1EF7CF4300BDC108 /* DeputyDetailSectionView.xib */; };
 		666315D21EF7D00500BDC108 /* DeputyDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666315D11EF7D00500BDC108 /* DeputyDetailSectionView.swift */; };
-		6668928A2162B25600FC6B0E /* activity_rates_by_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892892162B25600FC6B0E /* activity_rates_by_group.json */; };
+		6668928A2162B25600FC6B0E /* activity_rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892892162B25600FC6B0E /* activity_rates.json */; };
 		6668928C2162B33E00FC6B0E /* ActivityRatesByGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6668928B2162B33E00FC6B0E /* ActivityRatesByGroup.swift */; };
 		6668928D2162B33E00FC6B0E /* ActivityRatesByGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6668928B2162B33E00FC6B0E /* ActivityRatesByGroup.swift */; };
-		666892912162B94E00FC6B0E /* activity_rates_by_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892902162B94D00FC6B0E /* activity_rates_by_group.json */; };
+		666892912162B94E00FC6B0E /* activity_rates.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892902162B94D00FC6B0E /* activity_rates.json */; };
 		666892932162B97400FC6B0E /* ActivityRatesByGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666892922162B97400FC6B0E /* ActivityRatesByGroupTests.swift */; };
 		666E73931EC4F4C300D02DD2 /* PlaceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666E73921EC4F4C300D02DD2 /* PlaceViewModelTests.swift */; };
 		667161651FD85E09008B4312 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667161641FD85E09008B4312 /* BarChartView.swift */; };
@@ -418,9 +418,9 @@
 		666315CC1EF7C28F00BDC108 /* DeputyDeclarationViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeputyDeclarationViewModelTests.swift; sourceTree = "<group>"; };
 		666315CE1EF7CF4300BDC108 /* DeputyDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeputyDetailSectionView.xib; sourceTree = "<group>"; };
 		666315D11EF7D00500BDC108 /* DeputyDetailSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeputyDetailSectionView.swift; sourceTree = "<group>"; };
-		666892892162B25600FC6B0E /* activity_rates_by_group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity_rates_by_group.json; sourceTree = "<group>"; };
+		666892892162B25600FC6B0E /* activity_rates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity_rates.json; sourceTree = "<group>"; };
 		6668928B2162B33E00FC6B0E /* ActivityRatesByGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatesByGroup.swift; sourceTree = "<group>"; };
-		666892902162B94D00FC6B0E /* activity_rates_by_group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity_rates_by_group.json; sourceTree = "<group>"; };
+		666892902162B94D00FC6B0E /* activity_rates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity_rates.json; sourceTree = "<group>"; };
 		666892922162B97400FC6B0E /* ActivityRatesByGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatesByGroupTests.swift; sourceTree = "<group>"; };
 		666E73921EC4F4C300D02DD2 /* PlaceViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewModelTests.swift; sourceTree = "<group>"; };
 		667161641FD85E09008B4312 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
@@ -979,7 +979,7 @@
 		6D21F3F31EB939450030216C /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				666892892162B25600FC6B0E /* activity_rates_by_group.json */,
+				666892892162B25600FC6B0E /* activity_rates.json */,
 				6DA5797E20E244E200151C15 /* places.json */,
 				6D38A13520BCA6AF005D9DB5 /* ballot_deputies_votes.json */,
 				66B443192052B60600C8FCAE /* all_deputies.json */,
@@ -1011,7 +1011,7 @@
 		6D21F4091EB943160030216C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				666892902162B94D00FC6B0E /* activity_rates_by_group.json */,
+				666892902162B94D00FC6B0E /* activity_rates.json */,
 				6DA5797C20E244D400151C15 /* places.json */,
 				6D38A13820BCA6EA005D9DB5 /* ballot_deputies_votes.json */,
 				66B4431D2052B8CB00C8FCAE /* all_deputies.json */,
@@ -1344,7 +1344,7 @@
 				668869ED2091D06A00025C42 /* DeputyDetailSectionView.xib in Resources */,
 				665FC9A52163866900A19420 /* Statistics.storyboard in Resources */,
 				66FBE73E209349A00014D2CC /* Common.storyboard in Resources */,
-				6653DDB8216E118700C1859E /* activity_rates_by_group.json in Resources */,
+				6653DDB8216E118700C1859E /* activity_rates.json in Resources */,
 				668869EE2091D06A00025C42 /* Onboarding.storyboard in Resources */,
 				6D3364E420E282D000798259 /* places.json in Resources */,
 				668869F02091D06A00025C42 /* SelectAddressFooterView.xib in Resources */,
@@ -1363,7 +1363,7 @@
 				6658CBB01F140B9F0007E47B /* Deputy.storyboard in Resources */,
 				6D38A13620BCA6B0005D9DB5 /* ballot_deputies_votes.json in Resources */,
 				669CADAB212AD779005EF3B9 /* fabric.apikey in Resources */,
-				6668928A2162B25600FC6B0E /* activity_rates_by_group.json in Resources */,
+				6668928A2162B25600FC6B0E /* activity_rates.json in Resources */,
 				6658CBB31F140C110007E47B /* Localizable.strings in Resources */,
 				660A2BBC213956950070D663 /* fabric.buildsecret in Resources */,
 				665FB1A11F71B44E007EABC2 /* Themes.xcassets in Resources */,
@@ -1396,7 +1396,7 @@
 				66B4431E2052B8CB00C8FCAE /* all_deputies.json in Resources */,
 				663A1AA11F04398D0001BDEE /* response_empty.json in Resources */,
 				6D21F40D1EB943160030216C /* details_deputy.json in Resources */,
-				666892912162B94E00FC6B0E /* activity_rates_by_group.json in Resources */,
+				666892912162B94E00FC6B0E /* activity_rates.json in Resources */,
 				66DE649B1EBE0BE300D8B656 /* 2_deputies_found_by_gps.json in Resources */,
 				6DA5797D20E244D500151C15 /* places.json in Resources */,
 			);

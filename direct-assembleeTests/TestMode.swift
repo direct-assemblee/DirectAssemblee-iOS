@@ -96,7 +96,7 @@ enum StatisticsTestMode: TestMode {
         
         switch (self) {
         case .activityRatesByGroup:
-            return "activity_rates_by_group"
+            return "activity_rates"
         }
     }
 }

@@ -20,7 +20,7 @@ struct Constants {
         static let subscribePath = "/subscribe?deputyId=X"
         static let unsubscribePath = "/unsubscribe?deputyId=X"
         static let ballotDeputiesVotesPath = "/votes"
-        static let activityRatesByGroupPath = "/activityRatesByGroup"
+        static let activityRatesByGroupPath = "/activityRates"
     }
     
     struct Web {

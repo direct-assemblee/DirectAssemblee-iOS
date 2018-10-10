@@ -21,7 +21,7 @@ protocol Api {
     func unsubscribeToPushNotifications(withToken token:String, instanceId:String, forDeputyId deputyId:Int) -> Observable<Bool>
     func deputiesVotes(forBallotId ballotId:Int) -> Observable<BallotDeputiesVotes>
     func places(forText text: String) -> Observable<[Place]>
-    func activityRatesByGroup() -> Observable<[ActivityRate]>
+    func activityRates() -> Observable<[ActivityRate]>
     
     func get(url: String, queryParameters:[String:Any]) -> Observable<Any>
     func post(url: String, bodyParameters:[String: Any]) -> Observable<Any>
@@ -225,7 +225,7 @@ extension Api {
         })
     }
     
-    func activityRatesByGroup() -> Observable<[ActivityRate]> {
+    func activityRates() -> Observable<[ActivityRate]> {
         
         return Observable<[ActivityRate]>.create({  observer in
             
@@ -235,13 +235,13 @@ extension Api {
                 
                 //TEMP : TODO migrate all with Codable
                 guard let data = try? JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted),
-                    let activityRates = try? JSONDecoder().decode(Ranking.self, from: data) else {
+                    let activityRates = try? JSONDecoder().decode([ActivityRate].self, from: data) else {
                         observer.onNext([])
                         observer.onCompleted()
                         return
                 }
                 
-                observer.onNext(activityRates.activityRatesByGroup)
+                observer.onNext(activityRates)
                 observer.onCompleted()
             }, onError: { error in
                 observer.onError(DAError(error: error, message: R.string.localizable.error_retry()))
