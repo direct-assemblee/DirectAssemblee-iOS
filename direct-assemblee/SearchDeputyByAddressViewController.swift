@@ -130,13 +130,4 @@ class SearchDeputyByAddressViewController: BaseViewController, BindableType {
         
     }
     
-    // MARK: - Helpers
-    
-    func displayError(error:DAError) {
-        
-        let alertViewController = UIAlertController(title: R.string.localizable.error(), message: String(describing:error), preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: nil))
-        
-        self.present(alertViewController, animated: true, completion: nil)
-    }
 }
