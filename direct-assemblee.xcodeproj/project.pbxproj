@@ -61,6 +61,7 @@
 		664C853F1FA9CAD2002F00B3 /* DeputyMainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664C853E1FA9CAD2002F00B3 /* DeputyMainViewModelTests.swift */; };
 		664DD7802084C2A400E33627 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DD77F2084C2A400E33627 /* FAQViewController.swift */; };
 		6652D5121EBDF5F5009EF645 /* SearchDeputyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6652D5111EBDF5F5009EF645 /* SearchDeputyViewModel.swift */; };
+		6653DDB8216E118700C1859E /* activity_rates_by_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 666892892162B25600FC6B0E /* activity_rates_by_group.json */; };
 		6658CB191F13F54A0007E47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658CB181F13F54A0007E47B /* LaunchScreen.storyboard */; };
 		6658CBB01F140B9F0007E47B /* Deputy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6658CBAF1F140B9F0007E47B /* Deputy.storyboard */; };
 		6658CBB31F140C110007E47B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6658CBB51F140C110007E47B /* Localizable.strings */; };
@@ -1340,6 +1341,7 @@
 				668869ED2091D06A00025C42 /* DeputyDetailSectionView.xib in Resources */,
 				665FC9A52163866900A19420 /* Statistics.storyboard in Resources */,
 				66FBE73E209349A00014D2CC /* Common.storyboard in Resources */,
+				6653DDB8216E118700C1859E /* activity_rates_by_group.json in Resources */,
 				668869EE2091D06A00025C42 /* Onboarding.storyboard in Resources */,
 				6D3364E420E282D000798259 /* places.json in Resources */,
 				668869F02091D06A00025C42 /* SelectAddressFooterView.xib in Resources */,
