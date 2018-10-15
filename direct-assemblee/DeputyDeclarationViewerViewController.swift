@@ -11,20 +11,18 @@ import UIKit
 import RxAlamofire
 import Alamofire
 import RxSwift
+import WebKit
 
-class DeputyDeclarationViewerViewController: BaseViewController, BindableType, UIGestureRecognizerDelegate {
+class DeputyDeclarationViewerViewController: BaseViewController, BindableType, UIGestureRecognizerDelegate, WKNavigationDelegate {
     
-    @IBOutlet weak var webview: UIWebView!
+    @IBOutlet weak var webviewContainer: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var refreshBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var errorView: UIView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var loadingViewContainer: UIView!
-    
     @IBOutlet weak var toolbar: UIToolbar!
     
+    private var webview: WKWebView!
     private var downloadedFileUrl:URL?
     
     typealias ViewModelType = DeputyDeclarationViewerViewModel
@@ -34,15 +32,18 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
         super.viewDidLoad()
         
         self.setupColors()
+        self.configureWebView()
         self.bindViewModel()
-        
-        self.webview.scalesPageToFit = true
-        self.webview.scrollView.minimumZoomScale = 1.0
-        self.webview.scrollView.maximumZoomScale = 5.0
-        self.webview.stringByEvaluatingJavaScript(from: "document.querySelector('meta[name=viewport]').setAttribute('content', 'user-scalable = 1;', false); ")
-        
+
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+    }
+    
+    private func configureWebView() {
+        let webConfiguration = WKWebViewConfiguration()
+        self.webview = WKWebView(frame: self.view.bounds, configuration: webConfiguration)
+        self.webview.navigationDelegate = self
+        self.webviewContainer.add(constraintedSubview: self.webview)
     }
     
     //MARK: - Style
@@ -66,10 +67,9 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
         self.viewModel.dateText.asDriver().drive(self.dateLabel.rx.text).disposed(by: self.disposeBag)
         self.viewModel.isShareButtonEnabled.asDriver().drive(self.shareBarButtonItem.rx.isEnabled).disposed(by: self.disposeBag)
         self.viewModel.isWebviewHidden.asDriver().drive(self.webview.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isErrorViewHidden.asDriver().drive(self.errorView.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.errorText.asDriver().drive(self.errorLabel.rx.text).disposed(by: self.disposeBag)
-        
+
         self.bindDownloadedFileUrl()
+        self.bindErrorView()
         self.bindLoadingView()
         
     }
@@ -78,24 +78,38 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
         
         self.viewModel.downloadedFileUrl
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] url in
-                self?.webview.loadRequest(URLRequest(url: url))
-                self?.downloadedFileUrl = url
+            .subscribe(onNext: { [weak self] fileUrl in
+                self?.downloadedFileUrl = fileUrl
+                self?.webview.loadFileURL(fileUrl, allowingReadAccessTo: fileUrl)
             }).disposed(by: self.disposeBag)
     }
     
-    private func bindLoadingView() {
+    private func bindErrorView() {
         
-        self.viewModel.isLoadingViewHidden.asDriver().drive(self.loadingViewContainer.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isErrorViewHidden.asDriver().drive(onNext: { [unowned self] isHidden in
+            
+            if isHidden {
+                self.webviewContainer.removePlaceholderView()
+            } else {
+                
+                self.webviewContainer.addPlaceholderView(label: self.viewModel.errorText.value) { [unowned self] in
+                    self.webviewContainer.removePlaceholderView()
+                    self.viewModel.reloadData()
+                }
+            }
+        }).disposed(by: self.disposeBag)
+    }
+    
+    private func bindLoadingView() {
         
         self.viewModel.isLoadingViewHidden
             .asDriver()
             .drive(onNext: { [weak self] isHidden in
                 
                 if isHidden {
-                    self?.loadingViewContainer.removeLoadingView()
+                    self?.webviewContainer.removeLoadingView()
                 } else {
-                    self?.loadingViewContainer.addLoadingView()
+                    self?.webviewContainer.addLoadingView()
                 }
                 
             }).disposed(by: self.disposeBag)
@@ -123,5 +137,24 @@ class DeputyDeclarationViewerViewController: BaseViewController, BindableType, U
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+    
+    //MARK: - WKNavigationDelegate
+    
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let cred = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        completionHandler(.useCredential, cred)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.webviewContainer.removeLoadingView()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        self.webviewContainer.removeLoadingView()
+        self.webviewContainer.addPlaceholderView(error: DAError(error: error, message: R.string.localizable.error_download())) { [weak self] in
+            self?.webviewContainer.removePlaceholderView()
+            self?.viewModel.reloadData()
+        }
     }
 }
