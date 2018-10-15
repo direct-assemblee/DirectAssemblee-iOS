@@ -126,39 +126,38 @@ class DeputyHeaderCardViewController: BaseViewController, BindableType {
     
     private func bindDeputyInformations() {
         
-        self.viewModel.completeNameText.asObservable().bind(to: self.completeNameLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.completeNameText.asObservable().bind(to: self.reducedHeaderCompleteNameLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.parliamentGroupText.asObservable().bind(to: self.parliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.parliamentGroupText.asObservable().bind(to: self.reducedHeaderParliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.districtText.asObservable().bind(to: self.districtLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.activityRateText.asObservable().bind(to: self.activityRateLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.activityRateTitleText.asObservable().bind(to: self.activityRateTitleLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.completeNameText.asDriver().drive(self.completeNameLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.completeNameText.asDriver().drive(self.reducedHeaderCompleteNameLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.parliamentGroupText.asDriver().drive(self.parliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.parliamentGroupText.asDriver().drive(self.reducedHeaderParliamentGroupLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.districtText.asDriver().drive(self.districtLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.activityRateText.asDriver().drive(self.activityRateLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.activityRateTitleText.asDriver().drive(self.activityRateTitleLabel.rx.text).disposed(by: self.disposeBag)
     }
     
 
     
     private func bindNeededProfileActions() {
-        self.viewModel.isProfileAvailable.asObservable().bind(to: self.photoButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
-        self.viewModel.isProfileAvailable.asObservable().bind(to: self.informationButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
-        self.viewModel.isProfileAvailable.asObservable().bind(to: self.reducedPhotoButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
-        self.viewModel.isProfileAvailable.asObservable().bind(to: self.reducedInformationButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isProfileAvailable.asDriver().drive(self.photoButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isProfileAvailable.asDriver().drive(self.informationButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isProfileAvailable.asDriver().drive(self.reducedPhotoButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isProfileAvailable.asDriver().drive(self.reducedInformationButton.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
     }
     
     private func bindHiddenItems() {
-        self.viewModel.isReducedPhotoViewHidden.asObservable().bind(to: self.reducedPhotoButton.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isReducedInformationButtonViewHidden.asObservable().bind(to: self.reducedInformationButton.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isInformationButtonHidden.asObservable().bind(to: self.informationButton.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isBackButtonHidden.asObservable().bind(to: self.backButton.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isCloseButtonHidden.asObservable().bind(to: self.closeButton.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isActivityHidden.asObservable().bind(to: self.activityRateLabel.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isActivityHidden.asObservable().bind(to: self.activityRateTitleLabel.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isReducedPhotoViewHidden.asDriver().drive(self.reducedPhotoButton.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isReducedInformationButtonViewHidden.asDriver().drive(self.reducedInformationButton.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isInformationButtonHidden.asDriver().drive(self.informationButton.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isBackButtonHidden.asDriver().drive(self.backButton.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isCloseButtonHidden.asDriver().drive(self.closeButton.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isActivityHidden.asDriver().drive(self.activityRateLabel.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isActivityHidden.asDriver().drive(self.activityRateTitleLabel.rx.isHidden).disposed(by: self.disposeBag)
     }
     
     private func bindPhoto() {
         
-        self.viewModel.photoData.asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] photoData in
+        self.viewModel.photoData.asDriver()
+            .drive(onNext: { [weak self] photoData in
                 self?.photoButton.setImage(UIImage(data: photoData), for: .normal)
                 self?.photoButton.imageView?.contentMode = .scaleAspectFill
                 self?.reducedPhotoButton.setImage(UIImage(data: photoData), for: .normal)

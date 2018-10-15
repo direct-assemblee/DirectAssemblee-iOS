@@ -35,6 +35,10 @@ class RealApi: Api {
         }).observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
     }
     
+    func getData(url: String, queryParameters:[String:Any]) ->  Observable<Data> {
+        return Observable<Data>.empty()
+    }
+    
     func post(url: String, bodyParameters:[String:Any]) ->  Observable<Any> {
         
         log.debug("POST : \(url)")

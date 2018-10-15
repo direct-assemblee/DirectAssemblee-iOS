@@ -48,6 +48,8 @@ class SearchDeputyInListViewController: BaseViewController, BindableType {
     
     func bindViewModel() {
         
+        self.navigationItem.title = self.viewModel.title
+        
         self.bindSearchBar()
         self.bindDeputiesList()
         self.bindLoadingView()
@@ -63,25 +65,25 @@ class SearchDeputyInListViewController: BaseViewController, BindableType {
             .debounce(0.5, scheduler: MainScheduler.instance)
             .asObservable().bind(to: self.viewModel.searchText).disposed(by: self.disposeBag)
         
-        self.viewModel.isSearchEnabled.asObservable().bind(to: self.searchBar.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
+        self.viewModel.isSearchEnabled.asDriver().drive(self.searchBar.rx.isUserInteractionEnabled).disposed(by: self.disposeBag)
         self.searchBar.placeholder = self.viewModel.enterNamePlaceholderText
     }
     
     private func bindDeputiesList() {
         
-        self.viewModel.deputiesListViewModel.asObservable()
+        self.viewModel.deputiesListViewModel
+            .asDriver()
             .filter{ $0 != nil }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] viewModel in
+            .drive(onNext: { [weak self] viewModel in
                 self?.setupDeputiesListViewController(viewModel: viewModel!)
             }).disposed(by: self.disposeBag)
     }
     
     private func bindLoadingView() {
         
-        self.viewModel.isLoadingViewHidden.asObservable()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] isHidden in
+        self.viewModel.isLoadingViewHidden
+            .asDriver()
+            .drive(onNext: { [weak self] isHidden in
             if isHidden {
                 self?.deputiesListViewContainer.removeLoadingView()
             } else {
@@ -90,17 +92,20 @@ class SearchDeputyInListViewController: BaseViewController, BindableType {
         }).disposed(by: self.disposeBag)
         
         self.viewModel.isLoadingViewHidden.asObservable()
+            .observeOn(MainScheduler.instance)
             .map{!$0}
             .bind(to: self.deputiesListViewContainer.rx.isHidden).disposed(by: self.disposeBag)
     }
     
     private func bindErrorView() {
         
-        self.viewModel.isErrorViewHidden.asObservable().bind(to: self.errorView.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.isErrorViewHidden.asObservable()
+        self.viewModel.isErrorViewHidden.asDriver().drive(self.errorView.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.isErrorViewHidden
+            .asObservable()
+            .observeOn(MainScheduler.instance)
             .map{!$0}
             .bind(to: self.deputiesListViewContainer.rx.isHidden).disposed(by: self.disposeBag)
-        self.viewModel.errorPlaceholderText.asObservable().bind(to: self.errorLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.errorPlaceholderText.asDriver().drive(self.errorLabel.rx.text).disposed(by: self.disposeBag)
         self.reloadButton.setTitle(self.viewModel.reloadText, for: .normal)
     }
     

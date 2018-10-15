@@ -69,8 +69,8 @@ class SearchDeputyViewController: BaseViewController, BindableType {
             }
         }).disposed(by: self.disposeBag)
         
-        self.viewModel.processingText.asObservable().bind(to: self.processingLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.isLoadingViewHidden.asObservable().bind(to: self.loadingViewContainer.rx.isHidden).disposed(by: self.disposeBag)
+        self.viewModel.processingText.asDriver(onErrorJustReturn: "").drive(self.processingLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.isLoadingViewHidden.asDriver().drive(self.loadingViewContainer.rx.isHidden).disposed(by: self.disposeBag)
     }
     
     // MARK: - Navigation

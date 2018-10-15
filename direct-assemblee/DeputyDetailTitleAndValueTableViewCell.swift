@@ -39,8 +39,8 @@ class DeputyDetailTitleAndValueTableViewCell: DeputyDetailBaseTableViewCell, Bin
             return
         }
         
-        viewModel.titleText.asObservable().bind(to: self.titleLabel.rx.text).disposed(by: self.disposeBag)
-        viewModel.valueText.asObservable().bind(to: self.valueLabel.rx.text).disposed(by: self.disposeBag)
+        viewModel.titleText.asDriver().drive(self.titleLabel.rx.text).disposed(by: self.disposeBag)
+        viewModel.valueText.asDriver().drive(self.valueLabel.rx.text).disposed(by: self.disposeBag)
     }
     
 }

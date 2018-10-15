@@ -21,3 +21,23 @@ enum SelectDeputyStatus {
     case followStarts
     case consultationStarts(DeputyMainViewModel)
 }
+
+
+enum State: Equatable {
+    case loading
+    case loaded
+    case error(error: DAError)
+    
+    static func ==(lhs: State, rhs: State) -> Bool {
+        switch (lhs, rhs) {
+        case ( .loaded, .loaded), (.loading, .loading):
+            return true
+            
+        case (let .error(error1), let .error(error2)):
+            return error1.code == error2.code && error1.description == error2.description
+            
+        default:
+            return false
+        }
+    }
+}

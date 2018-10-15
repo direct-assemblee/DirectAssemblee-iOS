@@ -19,13 +19,13 @@ struct BallotVotesViewModels {
     var noVotingDeputiesViewModel: DeputiesListViewModel
 }
 
-enum State {
-    case loading
-    case loaded(data: BallotVotesViewModels)
-    case error(error: DAError)
-}
-
 class BallotDeputiesVotesViewModel: BaseViewModel, DeputySearchViewModel {
+    
+    enum State {
+        case loading
+        case loaded(data: BallotVotesViewModels)
+        case error(error: DAError)
+    }
     
     private var api: Api
     private var timelineEvent: TimelineEvent
@@ -62,6 +62,8 @@ class BallotDeputiesVotesViewModel: BaseViewModel, DeputySearchViewModel {
     // MARK: - Configure
     
     func loadBallotDeputiesVotes() {
+        
+        self.state.accept(.loading)
         
         self.api.deputiesVotes(forBallotId: self.timelineEvent.id)
             .subscribe(onNext: { [weak self] ballotDeputiesVotes in

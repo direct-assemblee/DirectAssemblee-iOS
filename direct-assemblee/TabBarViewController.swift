@@ -19,6 +19,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.viewControllers = [
             self.getMyDeputyItemViewController(),
             self.getSearchDeputyItemViewController(),
+            self.getMainStatisticsItemViewController(),
             self.getFaqItemViewController(),
             self.getMoreMenuItemViewController()
         ]
@@ -45,13 +46,25 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let searchDeputyNavigationController = UINavigationController(rootViewController: searchDeputyInListViewController)
         searchDeputyNavigationController.navigationBar.isTranslucent = false
 
-        let searchDeputyBarItem = UITabBarItem(title: "Rechercher", image: UIImage(named: "icon_search"), selectedImage: UIImage(named: "icon_search"))
+        let searchDeputyBarItem = UITabBarItem(title: R.string.localizable.search(), image: UIImage(named: "icon_search"), selectedImage: UIImage(named: "icon_search"))
         searchDeputyNavigationController.tabBarItem = searchDeputyBarItem
         
         return searchDeputyNavigationController
     }
-
     
+    private func getMainStatisticsItemViewController() -> UIViewController {
+        
+        let mainStatisticsViewController = R.storyboard.statistics.statisticsMainViewController()!
+        
+        let mainStatisticsNavigationController = UINavigationController(rootViewController: mainStatisticsViewController)
+        mainStatisticsNavigationController.navigationBar.isTranslucent = false
+        
+        let mainStatisticsBarItem = UITabBarItem(title: R.string.localizable.synthesis(), image: UIImage(named: "icon_synthesis"), selectedImage: UIImage(named: "icon_synthesis"))
+        mainStatisticsViewController.tabBarItem = mainStatisticsBarItem
+        
+        return mainStatisticsNavigationController
+    }
+
     private func getFaqItemViewController() -> UIViewController {
 
         let faqViewController = R.storyboard.common.faqViewController()!
@@ -59,7 +72,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let faqNavigationController = UINavigationController(rootViewController: faqViewController)
         faqNavigationController.navigationBar.isTranslucent = false
         
-        let faqBarItem = UITabBarItem(title: "FAQ", image: UIImage(named: "icon_faq"), selectedImage: UIImage(named: "icon_faq"))
+        let faqBarItem = UITabBarItem(title: R.string.localizable.faq_short(), image: UIImage(named: "icon_faq"), selectedImage: UIImage(named: "icon_faq"))
         faqNavigationController.tabBarItem = faqBarItem
         
         return faqNavigationController

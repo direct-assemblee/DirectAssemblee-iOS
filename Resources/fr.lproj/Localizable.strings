@@ -127,3 +127,10 @@
 "deputy_details_no_other_current_mandate" = "Aucun autre mandat en cours";
 "deputy_details_no_roles" = "Aucun rôle";
 "deputy_details_roles" = "Rôles";
+"search" = "Rechercher";
+"search_a_deputy" = "Rechercher un député";
+"faq_short" = "FAQ";
+"synthesis" = "Synthèse";
+
+/*Fuzzy*/
+"activity_rates_by_groups" = "Moyenne de participation aux votes \npar groupe parlementaire";

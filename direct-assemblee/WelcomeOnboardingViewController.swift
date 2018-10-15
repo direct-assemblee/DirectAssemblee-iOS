@@ -39,11 +39,11 @@ class WelcomeOnboardingViewController: BaseViewController, BindableType {
     // MARK: - Setup
     
     func bindViewModel() {
-        self.viewModel.welcomeText.asObservable().bind(to: self.welcomeLabel.rx.text).disposed(by: self.disposeBag)
-        self.viewModel.useGeolocationText.asObservable().bind(to: self.geolocationButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
-        self.viewModel.useAllDeputiesList.asObservable().bind(to: self.listButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
-        self.viewModel.enterAddressText.asObservable().bind(to: self.addressButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
-        self.viewModel.addressDisclaimerText.asObservable().bind(to: self.addressDisclaimer.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.welcomeText.asDriver().drive(self.welcomeLabel.rx.text).disposed(by: self.disposeBag)
+        self.viewModel.useGeolocationText.asDriver().drive(self.geolocationButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.useAllDeputiesList.asDriver().drive(self.listButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.enterAddressText.asDriver().drive(self.addressButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.addressDisclaimerText.asDriver().drive(self.addressDisclaimer.rx.text).disposed(by: self.disposeBag)
         
     }
     

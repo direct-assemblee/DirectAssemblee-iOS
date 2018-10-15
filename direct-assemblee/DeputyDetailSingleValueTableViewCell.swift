@@ -28,7 +28,7 @@ class DeputyDetailSingleValueTableViewCell: DeputyDetailBaseTableViewCell, Binda
             return
         }
         
-        viewModel.valueText.asObservable().bind(to: self.valueLabel.rx.text).disposed(by: self.disposeBag)
+        viewModel.valueText.asDriver().drive(self.valueLabel.rx.text).disposed(by: self.disposeBag)
         
         self.setupStyle()
     }

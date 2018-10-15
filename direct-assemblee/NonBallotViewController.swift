@@ -56,7 +56,7 @@ class NonBallotViewController: BaseViewController, BindableType, UIGestureRecogn
     
     func bindViewModel() {
         
-        self.viewModel.readMoreText.asObservable().bind(to: self.readMoreButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
+        self.viewModel.readMoreText.asDriver().drive(self.readMoreButton.rx.title(for: .normal)).disposed(by: self.disposeBag)
         
         self.viewModel.infosViewModels
             .asDriver()

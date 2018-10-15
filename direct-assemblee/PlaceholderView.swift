@@ -36,7 +36,7 @@ class PlaceholderView: UIView {
     
     static func initWithError(_ error: DAError, refreshAction: @escaping (() -> Void)) -> PlaceholderView? {
         
-        let placeholderView = R.nib.placeholderView.firstView(owner: self)
+        let placeholderView = PlaceholderView.create(refreshAction: refreshAction)
         placeholderView?.message.text = error.description
         return placeholderView
     }

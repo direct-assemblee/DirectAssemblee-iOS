@@ -91,9 +91,9 @@ class SearchDeputyByAddressViewController: BaseViewController, BindableType {
         }).disposed(by: self.disposeBag)
         
         self.viewModel.isLoadingViewDisplayed
-            .asObservable()
+            .asDriver()
             .filter({$0 == true})
-            .subscribe(onNext: { [weak self] isDisplayed in
+            .drive(onNext: { [weak self] isDisplayed in
                 self?.searchResultsTableView.tableFooterView = self?.searchResultsLoadingFooterView
             }).disposed(by: self.disposeBag)
         
@@ -130,13 +130,4 @@ class SearchDeputyByAddressViewController: BaseViewController, BindableType {
         
     }
     
-    // MARK: - Helpers
-    
-    func displayError(error:DAError) {
-        
-        let alertViewController = UIAlertController(title: R.string.localizable.error(), message: String(describing:error), preferredStyle: .alert)
-        alertViewController.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: nil))
-        
-        self.present(alertViewController, animated: true, completion: nil)
-    }
 }
