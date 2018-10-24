@@ -22,6 +22,10 @@ class DeputyTimelineViewController: BaseViewController, BindableType, UIViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.timeLineTableView.rowHeight = UITableViewAutomaticDimension
+        self.timeLineTableView.estimatedRowHeight = 230
+        self.timeLineTableView.separatorInset = .zero;
+        
         self.refreshControl = self.createRefreshControl()
         self.timeLineTableView.contentInset = UIEdgeInsetsMake(Constants.Sizes.deputyHeaderCardMaxHeight, 0, 0, 0)
         self.timeLineTableView.backgroundView = self.refreshControl
