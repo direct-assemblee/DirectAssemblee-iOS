@@ -93,7 +93,7 @@ class DeputyMainViewController: BaseViewController, BindableType, UIGestureRecog
     func showErrorToast() {
         
         self.view.layoutIfNeeded()
-        self.errorToastTopConstraint.constant = self.isIphoneX() ? 0 : -24
+        self.errorToastTopConstraint.constant = self.isIphoneXOrMore() ? 0 : -24
         
         self.animateToast()
     }
@@ -126,11 +126,10 @@ class DeputyMainViewController: BaseViewController, BindableType, UIGestureRecog
     
     private func configureErrorToast() {
         self.view.bringSubview(toFront: self.errorToastView)
-        //self.errorTextTopConstraint.constant = self.isIphoneX() ? 46 : 26
     }
     
-    private func isIphoneX() -> Bool {
-        return UIScreen.main.nativeBounds.height == 2436
+    private func isIphoneXOrMore() -> Bool {
+        return UIScreen.main.nativeBounds.height >= 2436
     }
 
 }
