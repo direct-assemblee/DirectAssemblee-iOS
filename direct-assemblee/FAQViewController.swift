@@ -19,6 +19,12 @@ class FAQViewController: BaseViewController, WKNavigationDelegate {
         
         self.navigationController?.navigationBar.topItem?.title = R.string.localizable.faq()
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         self.configureWebView()
         self.view.addLoadingView()
         self.loadFaq()
